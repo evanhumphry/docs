@@ -1,10 +1,10 @@
-site_name: e.c. humphry
+site_name: Evan's Docs
 site_url: https://evahhumphry.com/mysite
 theme:
   features:
     - navigation.tabs
     - navigation.indexes
-  name: material 
+  name: material
   palette:
     scheme: slate
     primary: blue
@@ -15,3 +15,14 @@ extra_javascript:
   - javascripts/extra.js
 plugins:
   - blog
+nav:
+  - Home: index.md
+  - Docs:
+    - Notes: docs/notes.md
+    - Web Server: docs/webserver.md
+    - Prompts: docs/prompts.md
+  - Cisco:
+    - CCNA: cisco/ccna.md
+    - Commands: cisco/commands.md
+  - Blog:
+    - blog/index.md
