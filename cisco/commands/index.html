@@ -1,0 +1,1229 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://evahhumphry.com/mysite/cisco/commands/">
+      
+      
+        <link rel="prev" href="../ccna/">
+      
+      
+        <link rel="next" href="../../blog/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Commands - Evan's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cisco-ios-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Evan&#39;s Docs" class="md-header__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Evan's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/notes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ccna/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Cisco
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Evan&#39;s Docs" class="md-nav__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Evan's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cisco
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cisco
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ccna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#show-commands-read-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Commands (Read-Only)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Show Commands (Read-Only)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-layer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing &amp; Layer 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-layer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching &amp; Layer 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbors-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbors &amp; Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connectivity Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-upgrading-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch — Upgrading IOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-factory-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch — Factory Reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#show-commands-read-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Commands (Read-Only)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Show Commands (Read-Only)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-layer-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing &amp; Layer 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-layer-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching &amp; Layer 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neighbors-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbors &amp; Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connectivity Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-upgrading-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch — Upgrading IOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch-factory-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch — Factory Reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cisco-ios-commands">Cisco IOS Commands</h1>
+<p>Handy Cisco IOS commands for troubleshooting and configuration.</p>
+<hr />
+<h2 id="show-commands-read-only">Show Commands (Read-Only)</h2>
+<h3 id="system-info">System Info</h3>
+<pre><code>show version
+</code></pre>
+<p>Displays IOS version, uptime, hardware model, and memory.</p>
+<pre><code>show running-config
+</code></pre>
+<p>Shows the active configuration in RAM.</p>
+<pre><code>show startup-config
+</code></pre>
+<p>Shows the saved configuration in NVRAM (what loads on reboot).</p>
+<pre><code>show processes cpu
+</code></pre>
+<p>Shows CPU utilization — useful for identifying high-load issues.</p>
+<pre><code>show log
+</code></pre>
+<p>Displays system log messages.</p>
+<hr />
+<h3 id="interface-status">Interface Status</h3>
+<pre><code>show ip interface brief
+</code></pre>
+<p>Quick summary of all interfaces — IP address, status (up/down), and protocol state.</p>
+<pre><code>show interfaces
+</code></pre>
+<p>Detailed stats for all interfaces: errors, packet counts, duplex, speed.</p>
+<pre><code>show interfaces GigabitEthernet0/1
+</code></pre>
+<p>Detailed stats for a specific interface.</p>
+<pre><code>show interfaces status
+</code></pre>
+<p>(Switches) Shows port status, VLAN assignment, duplex, and speed.</p>
+<hr />
+<h3 id="routing-layer-3">Routing &amp; Layer 3</h3>
+<pre><code>show ip route
+</code></pre>
+<p>Displays the full routing table.</p>
+<pre><code>show ip route 10.0.0.1
+</code></pre>
+<p>Shows the best route to a specific destination.</p>
+<pre><code>show arp
+</code></pre>
+<p>Displays the ARP cache (IP-to-MAC mappings).</p>
+<pre><code>show ip protocols
+</code></pre>
+<p>Shows active routing protocols and their parameters.</p>
+<hr />
+<h3 id="switching-layer-2">Switching &amp; Layer 2</h3>
+<pre><code>show mac address-table
+</code></pre>
+<p>Displays the MAC address table on a switch.</p>
+<pre><code>show vlan brief
+</code></pre>
+<p>Lists all VLANs and their assigned ports.</p>
+<pre><code>show spanning-tree
+</code></pre>
+<p>Displays STP topology and port roles/states.</p>
+<pre><code>show spanning-tree vlan 10
+</code></pre>
+<p>STP info for a specific VLAN.</p>
+<pre><code>show etherchannel summary
+</code></pre>
+<p>Shows EtherChannel (port-channel) status.</p>
+<hr />
+<h3 id="neighbors-topology">Neighbors &amp; Topology</h3>
+<pre><code>show cdp neighbors
+</code></pre>
+<p>Lists directly connected Cisco devices via CDP.</p>
+<pre><code>show cdp neighbors detail
+</code></pre>
+<p>Extended CDP neighbor info — IP addresses, IOS version, etc.</p>
+<pre><code>show lldp neighbors
+</code></pre>
+<p>Same as CDP but using the open LLDP standard.</p>
+<hr />
+<h2 id="connectivity-tests">Connectivity Tests</h2>
+<pre><code>ping 192.168.1.1
+</code></pre>
+<p>Basic ICMP ping to test Layer 3 reachability.</p>
+<pre><code>ping 192.168.1.1 source GigabitEthernet0/1
+</code></pre>
+<p>Ping from a specific source interface.</p>
+<pre><code>traceroute 8.8.8.8
+</code></pre>
+<p>Traces the path packets take to a destination.</p>
+<hr />
+<h2 id="debug-commands">Debug Commands</h2>
+<blockquote>
+<p><strong>Warning:</strong> Debug commands can be CPU-intensive on production equipment. Use with care and always disable when done.</p>
+</blockquote>
+<pre><code>debug ip icmp
+</code></pre>
+<p>Debugs ICMP packets (ping traffic).</p>
+<pre><code>debug ip routing
+</code></pre>
+<p>Shows routing table changes in real time.</p>
+<pre><code>no debug all
+</code></pre>
+<p>Disables all active debug outputs. Run this when done debugging.</p>
+<pre><code>undebug all
+</code></pre>
+<p>Alias for <code>no debug all</code>.</p>
+<hr />
+<h2 id="switch-upgrading-ios">Switch — Upgrading IOS</h2>
+<pre><code>show flash:
+</code></pre>
+<p>List files stored in flash memory.</p>
+<pre><code>copy tftp: flash:
+</code></pre>
+<p>Copy a new IOS image from a TFTP server to flash.</p>
+<pre><code>boot system flash:new-ios-image.bin
+</code></pre>
+<p>Set the new image as the boot file (add to running-config, then save).</p>
+<pre><code>write memory
+</code></pre>
+<p>Save the running-config to startup-config.</p>
+<hr />
+<h2 id="switch-factory-reset">Switch — Factory Reset</h2>
+<pre><code>write erase
+</code></pre>
+<p>Erases the startup-config (NVRAM).</p>
+<pre><code>delete flash:vlan.dat
+</code></pre>
+<p>Deletes the VLAN database.</p>
+<pre><code>reload
+</code></pre>
+<p>Reboots the switch. It will come up with factory defaults.</p>
+<hr />
+<h2 id="useful-shortcuts">Useful Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>?</code></td>
+<td>Context-sensitive help</td>
+</tr>
+<tr>
+<td><code>Tab</code></td>
+<td>Auto-complete a command</td>
+</tr>
+<tr>
+<td><code>Ctrl+C</code></td>
+<td>Abort a command or running process</td>
+</tr>
+<tr>
+<td><code>Ctrl+Z</code></td>
+<td>Exit to privileged EXEC mode</td>
+</tr>
+<tr>
+<td><code>do show ...</code></td>
+<td>Run a show command from config mode</td>
+</tr>
+<tr>
+<td><code>no &lt;command&gt;</code></td>
+<td>Negate / remove a configuration line</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
