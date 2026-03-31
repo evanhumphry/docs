@@ -26,6 +26,36 @@
 
 ---
 
+## Quick Binary Reference
+
+### Powers of 2
+
+| 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
+|-----|-----|-----|-----|-----|-----|-----|-----|
+| 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   |
+
+To convert **binary → decimal**, add up the bit positions that are `1`:
+
+- `11010000` = 128 + 64 + 16 = **208**
+- `10110100` = 128 + 32 + 16 + 4 = **180**
+
+To convert **decimal → binary**, subtract the largest power of 2 that fits and mark each bit:
+
+- **200** → 128 fits (1), remainder 72 → 64 fits (1), remainder 8 → 8 fits (1) → `11001000`
+- **150** → 128 fits (1), remainder 22 → 16 fits (1), remainder 6 → 4 fits (1), remainder 2 → 2 fits (1) → `10010110`
+
+### Subnetting Cheat Sheet
+
+| **Group Size** | 128  | 64   | 32   | 16   | 8    | 4    | 2    | 1    |
+|----------------|------|------|------|------|------|------|------|------|
+| **Subnet**     | 128  | 192  | 224  | 240  | 248  | 252  | 254  | 255  |
+| **CIDR**       | /25  | /26  | /27  | /28  | /29  | /30  | /31  | /32  |
+| **CIDR (3rd octet)** | /17 | /18 | /19 | /20 | /21 | /22 | /23 | /24 |
+
+**How to use it:** Each column ties together — the group size is the block size (how many IPs per subnet), the subnet row is the mask octet value, and the CIDR rows give you the prefix length for the 4th and 3rd octets respectively.
+
+---
+
 ## Subnetting
 
 ### Key Formulas
