@@ -1,6 +1,11 @@
-# Web Server Configuration Checklist
+# Web Server Configuration
 
-## 1. Web Server (Nginx) Status
+A checklist for setting up and verifying an Nginx web server with SSL.
+
+---
+
+## 1. Nginx Status
+
 ```bash
 # Check if nginx is running
 sudo systemctl status nginx
@@ -13,42 +18,44 @@ sudo nginx -t
 ```
 
 ## 2. Port Configuration
+
 ```bash
 # Verify nginx is listening on 443
 sudo ss -tulpn | grep :443
 ```
 
 ## 3. SSL Certificates
-- Location: typically `/etc/nginx/ssl/` or `/etc/ssl/`
-- Required files:
-  - `fullchain.pem` (domain + intermediate certificates)
-  - `privkey.pem` (private key)
+
+Required files (typically in `/etc/nginx/ssl/` or `/etc/ssl/` or `/etc/pki/`):
+
+- `fullchain.pem` — domain + intermediate certificates
+- `privkey.pem` — private key
 
 ```nginx
-# In nginx.conf or site configuration
 server {
     listen 443 ssl;
     server_name yourdomain.com;
-    
+
     ssl_certificate /path/to/fullchain.pem;
     ssl_certificate_key /path/to/privkey.pem;
 }
 ```
-*certificates are usually located at /etc/pki/ or /etc/ssl*
 
-## 4. Firewall Configuration
+## 4. Firewall
+
 ```bash
-# For firewalld (Fedora/RHEL)
+# firewalld (Fedora/RHEL)
 sudo firewall-cmd --permanent --add-service=https
 sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --reload
 
-# For UFW (Ubuntu/Debian)
+# UFW (Ubuntu/Debian)
 sudo ufw allow https
 sudo ufw allow 443/tcp
 ```
 
 ## 5. Testing
+
 ```bash
 # Test SSL configuration
 openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
@@ -57,7 +64,8 @@ openssl s_client -connect yourdomain.com:443 -servername yourdomain.com
 nc -zv yourdomain.com 443
 ```
 
-Remember to restart nginx after configuration changes:
+## 6. Restart
+
 ```bash
 sudo systemctl restart nginx
 ```

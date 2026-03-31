@@ -4,6 +4,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.indexes
+    - navigation.expand
   name: material
   palette:
     scheme: slate
@@ -13,16 +14,18 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - javascripts/extra.js
-plugins:
-  - blog
 nav:
   - Home: index.md
-  - Docs:
-    - Notes: docs/notes.md
-    - Web Server: docs/webserver.md
-    - Prompts: docs/prompts.md
-  - Cisco:
-    - CCNA: cisco/ccna.md
-    - Commands: cisco/commands.md
-  - Blog:
-    - blog/index.md
+  - CCNA:
+    - Network Fundamentals: ccna/fundamentals.md
+    - IP Addressing & Subnetting: ccna/ip-addressing.md
+    - Switching: ccna/switching.md
+    - Routing: ccna/routing.md
+    - WAN Technologies: ccna/wan.md
+    - Security: ccna/security.md
+    - Network Services: ccna/network-services.md
+    - Wireless: ccna/wireless.md
+    - Commands Reference: ccna/commands.md
+  - Linux:
+    - Commands: linux/commands.md
+    - Web Server: linux/webserver.md
