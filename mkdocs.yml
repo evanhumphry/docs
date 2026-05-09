@@ -21,6 +21,8 @@ nav:
     - IP Addressing & Subnetting: ccna/ip-addressing.md
     - Switching: ccna/switching.md
     - Routing: ccna/routing.md
+    - OSPF: ccna/ospf.md
+    - ACLs: ccna/acls.md
     - WAN Technologies: ccna/wan.md
     - Security: ccna/security.md
     - Network Services: ccna/network-services.md
