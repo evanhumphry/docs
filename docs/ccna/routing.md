@@ -49,6 +49,88 @@ ip route 10.0.0.0 255.255.255.0 192.168.2.1 210
 
 ---
 
+## Router-on-a-Stick (Inter-VLAN Routing)
+
+Uses a single physical router interface divided into **sub-interfaces** — one per VLAN. The switch port connecting to the router is configured as a **trunk**.
+
+### How It Works
+
+```
+           Trunk (carries all VLANs)
+[Switch] =============================== [Router]
+ VLAN 10 (192.168.10.0/24)                Gi0/0.10
+ VLAN 20 (192.168.20.0/24)                Gi0/0.20
+ VLAN 30 (192.168.30.0/24)                Gi0/0.30
+```
+
+Each sub-interface acts as the **default gateway** for its VLAN. Traffic between VLANs goes up the trunk to the router and back down.
+
+### Switch Configuration
+
+The port facing the router must be a trunk:
+
+```
+interface GigabitEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+ no shutdown
+```
+
+### Router Sub-Interface Configuration
+
+```
+! Bring up the physical interface (no IP address on it)
+interface GigabitEthernet0/0
+ no shutdown
+
+! Sub-interface for VLAN 10
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+
+! Sub-interface for VLAN 20
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+
+! Sub-interface for VLAN 30
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+```
+
+### Native VLAN Sub-Interface
+
+If you need the router to handle untagged (native VLAN) traffic:
+
+```
+interface GigabitEthernet0/0.99
+ encapsulation dot1Q 99 native
+ ip address 192.168.99.1 255.255.255.0
+```
+
+The `native` keyword tells the router this sub-interface handles untagged frames. This must match the native VLAN on the switch trunk.
+
+### Verify
+
+```
+show ip interface brief
+show vlans
+show interfaces GigabitEthernet0/0.10
+```
+
+### Key Things to Remember
+
+- The physical interface (`Gi0/0`) gets **no IP address** — only the sub-interfaces do
+- Sub-interface number (`.10`) doesn't have to match the VLAN ID, but **it should** for clarity
+- `encapsulation dot1Q <vlan-id>` is **required** on every sub-interface
+- The switch trunk must allow the VLANs you're routing
+- Each sub-interface IP becomes the default gateway for hosts in that VLAN
+- Router-on-a-stick is simple but creates a **bandwidth bottleneck** since all inter-VLAN traffic shares one physical link — for higher performance, use a Layer 3 switch with SVIs
+
+---
+
 ## OSPF (Open Shortest Path First)
 
 Link-state protocol that uses Dijkstra's SPF algorithm to find the shortest path. It is an open standard (not vendor-specific).
