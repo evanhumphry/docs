@@ -176,6 +176,170 @@ Alias for `no debug all`.
 
 ---
 
+## Static Routes
+
+```
+! Route to a remote network via next-hop IP
+ip route 10.10.10.0 255.255.255.0 192.168.1.1
+
+! Route via exit interface
+ip route 10.10.10.0 255.255.255.0 GigabitEthernet0/1
+
+! Default route (gateway of last resort)
+ip route 0.0.0.0 0.0.0.0 192.168.1.1
+
+! Floating static (backup route with higher AD)
+ip route 10.10.10.0 255.255.255.0 192.168.2.1 210
+```
+
+### Verify
+
+```
+show ip route static
+show ip route 10.10.10.0
+```
+
+---
+
+## OSPF Configuration
+
+### Single-Area OSPF
+
+```
+router ospf 1
+ router-id 1.1.1.1
+ network 192.168.1.0 0.0.0.255 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ passive-interface GigabitEthernet0/0
+```
+
+### Enable OSPF Directly on an Interface
+
+```
+interface GigabitEthernet0/0
+ ip ospf 1 area 0
+```
+
+### Set Reference Bandwidth
+
+```
+router ospf 1
+ auto-cost reference-bandwidth 10000
+```
+
+### Advertise a Default Route into OSPF
+
+```
+ip route 0.0.0.0 0.0.0.0 203.0.113.1
+router ospf 1
+ default-information originate
+```
+
+### Verify
+
+```
+show ip ospf neighbor
+show ip ospf interface brief
+show ip route ospf
+show ip ospf database
+```
+
+---
+
+## ACLs
+
+### Standard ACL (Numbered)
+
+```
+access-list 10 deny host 192.168.1.100
+access-list 10 permit any
+```
+
+### Standard ACL (Named)
+
+```
+ip access-list standard BLOCK_GUEST
+ deny 10.10.10.0 0.0.0.255
+ permit any
+```
+
+### Extended ACL — Allow Only Web Traffic
+
+```
+ip access-list extended ALLOW_WEB
+ permit tcp 192.168.1.0 0.0.0.255 any eq 80
+ permit tcp 192.168.1.0 0.0.0.255 any eq 443
+ deny ip any any
+```
+
+### Extended ACL — Block a Host from a Server
+
+```
+ip access-list extended BLOCK_TO_SERVER
+ deny ip host 192.168.1.50 host 10.0.0.100
+ permit ip any any
+```
+
+### Extended ACL — Allow SSH from Management Subnet Only
+
+```
+ip access-list extended SSH_MGMT
+ permit tcp 172.16.0.0 0.0.0.255 any eq 22
+ deny tcp any any eq 22
+ permit ip any any
+```
+
+### Editing ACLs by Sequence Number
+
+```
+! View current ACL with sequence numbers
+show access-lists
+
+! Enter the ACL and insert/remove lines
+ip access-list extended ALLOW_WEB
+ 15 permit tcp any any eq 8080
+ no 30
+```
+
+### Applying ACLs to an Interface
+
+```
+! Apply inbound on an interface
+interface GigabitEthernet0/0
+ ip access-group ALLOW_WEB in
+
+! Apply outbound on an interface
+interface GigabitEthernet0/1
+ ip access-group BLOCK_GUEST out
+```
+
+### Applying an ACL to VTY Lines (SSH/Telnet Access)
+
+```
+ip access-list standard VTY_ACCESS
+ permit 192.168.1.0 0.0.0.255
+
+line vty 0 15
+ access-class VTY_ACCESS in
+```
+
+### Removing an ACL from an Interface
+
+```
+interface GigabitEthernet0/0
+ no ip access-group ALLOW_WEB in
+```
+
+### Verify
+
+```
+show access-lists
+show ip access-lists
+show ip interface GigabitEthernet0/0
+```
+
+---
+
 ## Switch — Upgrading IOS
 
 ```
