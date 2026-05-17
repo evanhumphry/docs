@@ -1,0 +1,1664 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://evahhumphry.com/mysite/ccna/acls/">
+      
+      
+        <link rel="prev" href="../ospf/">
+      
+      
+        <link rel="next" href="../wan/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ACLs - Evan's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#access-control-lists-acls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Evan&#39;s Docs" class="md-header__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Evan's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ACLs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../fundamentals/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/commands/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Evan&#39;s Docs" class="md-nav__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Evan's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addressing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addressing & Subnetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ospf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACLs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acl-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wildcard-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcard Masks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard ACLs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard ACLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numbered-standard-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbered Standard ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-standard-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named Standard ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended ACLs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended ACLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-allow-only-web-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Allow Only Web Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-block-a-host-from-reaching-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Block a Host from Reaching a Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-allow-ping-but-block-telnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Allow Ping But Block Telnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-restrict-ssh-access-to-management-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Restrict SSH Access to Management Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acls-on-vty-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACLs on VTY Lines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-direction-in-vs-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL Direction: in vs out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing ACLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-two-departments-block-inter-department-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Two departments, block inter-department traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-allow-dns-and-https-only-from-a-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Allow DNS and HTTPS only from a VLAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-things-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Things to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAN Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acl-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placement-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placement Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wildcard-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wildcard Masks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard ACLs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard ACLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numbered-standard-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbered Standard ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-standard-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named Standard ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended ACLs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended ACLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-allow-only-web-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Allow Only Web Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-block-a-host-from-reaching-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Block a Host from Reaching a Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-allow-ping-but-block-telnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Allow Ping But Block Telnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-restrict-ssh-access-to-management-subnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Restrict SSH Access to Management Subnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acls-on-vty-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACLs on VTY Lines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acl-direction-in-vs-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ACL Direction: in vs out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-acls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing ACLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-two-departments-block-inter-department-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Two departments, block inter-department traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-allow-dns-and-https-only-from-a-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Allow DNS and HTTPS only from a VLAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-things-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Things to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="access-control-lists-acls">Access Control Lists (ACLs)</h1>
+<p>ACLs filter traffic on router interfaces. They are processed <strong>top-down</strong> — the first matching rule is applied and processing stops. Every ACL has an implicit <code>deny any</code> at the end.</p>
+<hr />
+<h2 id="acl-types">ACL Types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Number Range</th>
+<th>Matches On</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>1–99, 1300–1999</td>
+<td>Source IP only</td>
+</tr>
+<tr>
+<td>Extended</td>
+<td>100–199, 2000–2699</td>
+<td>Source/dest IP, protocol, port</td>
+</tr>
+<tr>
+<td>Named</td>
+<td>—</td>
+<td>Either standard or extended by name</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="placement-rules">Placement Rules</h2>
+<ul>
+<li><strong>Standard ACLs</strong> → place close to the <strong>destination</strong> (they only match source, so placing near the source blocks too much)</li>
+<li><strong>Extended ACLs</strong> → place close to the <strong>source</strong> (specific enough to filter precisely early)</li>
+</ul>
+<hr />
+<h2 id="wildcard-masks">Wildcard Masks</h2>
+<p>Wildcard masks are the <strong>inverse</strong> of subnet masks. A <code>0</code> bit means "must match," a <code>1</code> bit means "don't care."</p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Wildcard Mask</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Match a single host</td>
+<td><code>0.0.0.0</code></td>
+<td>All bits must match</td>
+</tr>
+<tr>
+<td>Match a /24 subnet</td>
+<td><code>0.0.0.255</code></td>
+<td>Last octet is any</td>
+</tr>
+<tr>
+<td>Match a /26 subnet</td>
+<td><code>0.0.0.63</code></td>
+<td>Last 6 bits are any</td>
+</tr>
+<tr>
+<td>Match a /16 subnet</td>
+<td><code>0.0.255.255</code></td>
+<td>Last two octets are any</td>
+</tr>
+<tr>
+<td>Match any address</td>
+<td><code>255.255.255.255</code></td>
+<td>Nothing needs to match</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quick formula:</strong> <code>255.255.255.255 − subnet mask = wildcard mask</code></p>
+<hr />
+<h2 id="standard-acls">Standard ACLs</h2>
+<p>Match on <strong>source IP only</strong>. Best for simple permit/deny decisions.</p>
+<h3 id="numbered-standard-acl">Numbered Standard ACL</h3>
+<pre><code>! Block a single host from all traffic
+access-list 10 deny host 192.168.1.100
+access-list 10 permit any
+
+! Apply inbound on the interface closest to the destination
+interface GigabitEthernet0/0
+ ip access-group 10 in
+</code></pre>
+<h3 id="named-standard-acl">Named Standard ACL</h3>
+<pre><code>ip access-list standard BLOCK_GUEST
+ deny 10.10.10.0 0.0.0.255
+ permit any
+
+interface GigabitEthernet0/1
+ ip access-group BLOCK_GUEST in
+</code></pre>
+<hr />
+<h2 id="extended-acls">Extended ACLs</h2>
+<p>Match on <strong>source IP, destination IP, protocol, and port</strong>. Much more granular.</p>
+<h3 id="syntax">Syntax</h3>
+<pre><code>access-list &lt;number&gt; &lt;permit|deny&gt; &lt;protocol&gt; &lt;source&gt; &lt;wildcard&gt; &lt;dest&gt; &lt;wildcard&gt; [eq &lt;port&gt;]
+</code></pre>
+<h3 id="example-allow-only-web-traffic">Example: Allow Only Web Traffic</h3>
+<pre><code>ip access-list extended ALLOW_WEB
+ permit tcp 192.168.1.0 0.0.0.255 any eq 80
+ permit tcp 192.168.1.0 0.0.0.255 any eq 443
+ deny ip any any
+
+interface GigabitEthernet0/0
+ ip access-group ALLOW_WEB in
+</code></pre>
+<h3 id="example-block-a-host-from-reaching-a-server">Example: Block a Host from Reaching a Server</h3>
+<pre><code>ip access-list extended BLOCK_TO_SERVER
+ deny ip host 192.168.1.50 host 10.0.0.100
+ permit ip any any
+
+interface GigabitEthernet0/0
+ ip access-group BLOCK_TO_SERVER in
+</code></pre>
+<h3 id="example-allow-ping-but-block-telnet">Example: Allow Ping But Block Telnet</h3>
+<pre><code>ip access-list extended PING_NO_TELNET
+ deny tcp any any eq 23
+ permit icmp any any
+ permit ip any any
+
+interface GigabitEthernet0/0
+ ip access-group PING_NO_TELNET in
+</code></pre>
+<h3 id="example-restrict-ssh-access-to-management-subnet">Example: Restrict SSH Access to Management Subnet</h3>
+<pre><code>ip access-list extended SSH_MGMT_ONLY
+ permit tcp 172.16.0.0 0.0.0.255 any eq 22
+ deny tcp any any eq 22
+ permit ip any any
+
+interface GigabitEthernet0/0
+ ip access-group SSH_MGMT_ONLY in
+</code></pre>
+<hr />
+<h2 id="acls-on-vty-lines">ACLs on VTY Lines</h2>
+<p>Control who can SSH/Telnet into the router itself (not passing through it).</p>
+<pre><code>ip access-list standard VTY_ACCESS
+ permit 192.168.1.0 0.0.0.255
+
+line vty 0 15
+ access-class VTY_ACCESS in
+ transport input ssh
+</code></pre>
+<p><strong>Note:</strong> Use <code>access-class</code> (not <code>ip access-group</code>) on VTY lines.</p>
+<hr />
+<h2 id="acl-direction-in-vs-out">ACL Direction: <code>in</code> vs <code>out</code></h2>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>in</code></td>
+<td>Filter packets <strong>arriving</strong> on the interface</td>
+</tr>
+<tr>
+<td><code>out</code></td>
+<td>Filter packets <strong>leaving</strong> the interface</td>
+</tr>
+</tbody>
+</table>
+<p>Think of it from the <strong>router's perspective</strong> on that specific interface.</p>
+<hr />
+<h2 id="editing-acls">Editing ACLs</h2>
+<p>Named ACLs support inserting and removing individual lines by sequence number:</p>
+<pre><code>ip access-list extended ALLOW_WEB
+ 15 permit tcp any any eq 8080
+ no 30
+</code></pre>
+<p>To view sequence numbers:</p>
+<pre><code>show access-lists
+</code></pre>
+<hr />
+<h2 id="common-scenarios">Common Scenarios</h2>
+<h3 id="scenario-1-two-departments-block-inter-department-traffic">Scenario 1: Two departments, block inter-department traffic</h3>
+<p>LAN A (<code>192.168.10.0/24</code>) should not reach LAN B (<code>192.168.20.0/24</code>), but both should reach the internet.</p>
+<pre><code>ip access-list extended BLOCK_A_TO_B
+ deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+ permit ip any any
+
+! Apply inbound on the interface facing LAN A
+interface GigabitEthernet0/0
+ ip access-group BLOCK_A_TO_B in
+</code></pre>
+<h3 id="scenario-2-allow-dns-and-https-only-from-a-vlan">Scenario 2: Allow DNS and HTTPS only from a VLAN</h3>
+<p>VLAN 30 (<code>10.30.0.0/24</code>) should only be able to use DNS and HTTPS.</p>
+<pre><code>ip access-list extended VLAN30_RESTRICTED
+ permit udp 10.30.0.0 0.0.0.255 any eq 53
+ permit tcp 10.30.0.0 0.0.0.255 any eq 53
+ permit tcp 10.30.0.0 0.0.0.255 any eq 443
+ deny ip any any
+
+interface GigabitEthernet0/2
+ ip access-group VLAN30_RESTRICTED in
+</code></pre>
+<hr />
+<h2 id="verification-commands">Verification Commands</h2>
+<pre><code>show access-lists
+show ip access-lists
+show ip interface GigabitEthernet0/0
+show running-config | section access-list
+</code></pre>
+<hr />
+<h2 id="key-things-to-remember">Key Things to Remember</h2>
+<ul>
+<li>Implicit <code>deny any</code> at the end — always add a <code>permit any</code> if you want to allow unmatched traffic</li>
+<li><strong>One ACL per interface, per direction, per protocol</strong></li>
+<li>Standard ACLs near the destination, extended near the source</li>
+<li><code>host 10.0.0.1</code> is shorthand for <code>10.0.0.1 0.0.0.0</code></li>
+<li><code>any</code> is shorthand for <code>0.0.0.0 255.255.255.255</code></li>
+<li>ACL changes take effect immediately — no need to reapply</li>
+<li>Use <code>remark</code> lines to document what each rule does</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

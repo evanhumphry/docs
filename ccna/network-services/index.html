@@ -1,0 +1,2011 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://evahhumphry.com/mysite/ccna/network-services/">
+      
+      
+        <link rel="prev" href="../security/">
+      
+      
+        <link rel="next" href="../wireless/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Network Services - Evan's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-services" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Evan&#39;s Docs" class="md-header__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Evan's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../fundamentals/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/commands/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Evan&#39;s Docs" class="md-nav__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Evan's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addressing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addressing & Subnetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ospf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAN Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Services
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dhcp-dynamic-host-configuration-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP (Dynamic Host Configuration Protocol)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DHCP (Dynamic Host Configuration Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dora-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DORA Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-server-configuration-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP Server Configuration (IOS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP Relay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-domain-name-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS (Domain Name System)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS (Domain Name System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-record-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Record Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-on-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS on IOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT / PAT (Network Address Translation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT / PAT (Network Address Translation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pat-nat-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT (NAT Overload)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PAT (NAT Overload)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pat-using-the-outside-interface-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT Using the Outside Interface IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pat-using-a-pool-overloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT Using a Pool (Overloaded)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-named-acls-with-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Named ACLs with NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-extended-acls-with-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Extended ACLs with NAT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Extended ACLs with NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-only-nat-traffic-going-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Only NAT Traffic Going to the Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-only-nat-traffic-to-a-specific-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Only NAT Traffic to a Specific Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-with-route-maps-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT with Route Maps (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearing-and-verifying-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clearing and Verifying NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NTP (Network Time Protocol)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syslog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syslog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syslog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snmp-simple-network-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNMP (Simple Network Management Protocol)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dhcp-dynamic-host-configuration-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP (Dynamic Host Configuration Protocol)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DHCP (Dynamic Host Configuration Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dora-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DORA Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-server-configuration-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP Server Configuration (IOS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DHCP Relay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-domain-name-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS (Domain Name System)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS (Domain Name System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-record-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Record Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-on-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS on IOS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT / PAT (Network Address Translation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT / PAT (Network Address Translation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pat-nat-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT (NAT Overload)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PAT (NAT Overload)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pat-using-the-outside-interface-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT Using the Outside Interface IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pat-using-a-pool-overloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PAT Using a Pool (Overloaded)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-named-acls-with-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Named ACLs with NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-extended-acls-with-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Extended ACLs with NAT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Extended ACLs with NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-only-nat-traffic-going-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Only NAT Traffic Going to the Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-only-nat-traffic-to-a-specific-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Only NAT Traffic to a Specific Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-with-route-maps-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT with Route Maps (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearing-and-verifying-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clearing and Verifying NAT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAT Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NTP (Network Time Protocol)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syslog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syslog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syslog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snmp-simple-network-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNMP (Simple Network Management Protocol)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-services">Network Services</h1>
+<hr />
+<h2 id="dhcp-dynamic-host-configuration-protocol">DHCP (Dynamic Host Configuration Protocol)</h2>
+<p>DHCP automatically assigns IP addresses and network configuration to clients.</p>
+<h3 id="dora-process">DORA Process</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Message</th>
+<th>Direction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Discover</td>
+<td>Client → Broadcast</td>
+<td>Client looks for a DHCP server</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Offer</td>
+<td>Server → Client</td>
+<td>Server offers an IP address</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Request</td>
+<td>Client → Broadcast</td>
+<td>Client requests the offered IP</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ack</td>
+<td>Server → Client</td>
+<td>Server confirms the lease</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dhcp-server-configuration-ios">DHCP Server Configuration (IOS)</h3>
+<pre><code>ip dhcp excluded-address 192.168.1.1 192.168.1.10
+
+ip dhcp pool LAN_POOL
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8 8.8.4.4
+ lease 7
+
+! Verify
+show ip dhcp binding
+show ip dhcp pool
+</code></pre>
+<h3 id="dhcp-relay">DHCP Relay</h3>
+<p>When the DHCP server is on a different subnet, the router must relay requests:</p>
+<pre><code>interface GigabitEthernet0/0
+ ip helper-address 10.0.0.100
+</code></pre>
+<hr />
+<h2 id="dns-domain-name-system">DNS (Domain Name System)</h2>
+<p>DNS resolves hostnames to IP addresses.</p>
+<h3 id="common-record-types">Common Record Types</h3>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Maps hostname to IPv4 address</td>
+</tr>
+<tr>
+<td>AAAA</td>
+<td>Maps hostname to IPv6 address</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>Alias for another hostname</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>Mail server for a domain</td>
+</tr>
+<tr>
+<td>NS</td>
+<td>Authoritative name server for a domain</td>
+</tr>
+<tr>
+<td>PTR</td>
+<td>Reverse lookup (IP to hostname)</td>
+</tr>
+<tr>
+<td>SOA</td>
+<td>Start of Authority — zone metadata</td>
+</tr>
+<tr>
+<td>TXT</td>
+<td>Arbitrary text (used for SPF, DKIM, etc.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dns-on-ios">DNS on IOS</h3>
+<pre><code>! Enable DNS lookup
+ip domain-lookup
+ip name-server 8.8.8.8
+
+! Static hostname mapping
+ip host SERVER1 192.168.1.100
+
+! Verify
+show hosts
+</code></pre>
+<hr />
+<h2 id="nat-pat-network-address-translation">NAT / PAT (Network Address Translation)</h2>
+<p>NAT translates private IPs to public IPs for internet access.</p>
+<h3 id="nat-terminology">NAT Terminology</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inside Local</td>
+<td>Private IP on the internal network</td>
+</tr>
+<tr>
+<td>Inside Global</td>
+<td>Public IP representing the internal host</td>
+</tr>
+<tr>
+<td>Outside Local</td>
+<td>IP of external host as seen internally</td>
+</tr>
+<tr>
+<td>Outside Global</td>
+<td>Actual public IP of the external host</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interface-roles">Interface Roles</h3>
+<p>Every NAT configuration requires marking interfaces as <strong>inside</strong> or <strong>outside</strong>. This tells the router which direction to translate.</p>
+<pre><code>interface GigabitEthernet0/0
+ ip nat inside
+
+interface GigabitEthernet0/1
+ ip nat outside
+</code></pre>
+<hr />
+<h3 id="static-nat">Static NAT</h3>
+<p>One-to-one mapping — a single private IP always maps to a single public IP. Used for servers that need to be reachable from the outside.</p>
+<pre><code>ip nat inside source static 192.168.1.100 203.0.113.10
+
+interface GigabitEthernet0/0
+ ip nat inside
+interface GigabitEthernet0/1
+ ip nat outside
+</code></pre>
+<hr />
+<h3 id="dynamic-nat">Dynamic NAT</h3>
+<p>A pool of public IPs is assigned to internal hosts on demand. An ACL defines <strong>which internal hosts</strong> are allowed to be translated.</p>
+<pre><code>! Step 1: ACL defines which source IPs can be translated
+access-list 1 permit 192.168.1.0 0.0.0.255
+
+! Step 2: Define the public IP pool
+ip nat pool PUBLIC_POOL 203.0.113.10 203.0.113.20 netmask 255.255.255.0
+
+! Step 3: Bind the ACL to the pool
+ip nat inside source list 1 pool PUBLIC_POOL
+
+! Step 4: Mark interfaces
+interface GigabitEthernet0/0
+ ip nat inside
+interface GigabitEthernet0/1
+ ip nat outside
+</code></pre>
+<p>If the pool runs out of addresses, new connections are dropped until an existing translation times out.</p>
+<hr />
+<h3 id="pat-nat-overload">PAT (NAT Overload)</h3>
+<p>Many internal hosts share <strong>one public IP</strong> — the router tracks connections by port number. This is the most common type of NAT.</p>
+<h4 id="pat-using-the-outside-interface-ip">PAT Using the Outside Interface IP</h4>
+<pre><code>access-list 1 permit 192.168.1.0 0.0.0.255
+
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+
+interface GigabitEthernet0/0
+ ip nat inside
+interface GigabitEthernet0/1
+ ip nat outside
+</code></pre>
+<h4 id="pat-using-a-pool-overloaded">PAT Using a Pool (Overloaded)</h4>
+<pre><code>access-list 1 permit 192.168.1.0 0.0.0.255
+
+ip nat pool PAT_POOL 203.0.113.10 203.0.113.10 netmask 255.255.255.0
+ip nat inside source list 1 pool PAT_POOL overload
+
+interface GigabitEthernet0/0
+ ip nat inside
+interface GigabitEthernet0/1
+ ip nat outside
+</code></pre>
+<hr />
+<h3 id="using-named-acls-with-nat">Using Named ACLs with NAT</h3>
+<p>You can use named ACLs instead of numbered ones. Reference them by name in the NAT statement.</p>
+<pre><code>ip access-list standard NAT_HOSTS
+ permit 192.168.10.0 0.0.0.255
+ permit 192.168.20.0 0.0.0.255
+
+ip nat inside source list NAT_HOSTS interface GigabitEthernet0/1 overload
+</code></pre>
+<hr />
+<h3 id="using-extended-acls-with-nat">Using Extended ACLs with NAT</h3>
+<p>Extended ACLs give you more control — you can NAT based on <strong>source and destination</strong>, not just source. This is useful when you only want to translate traffic going to specific destinations.</p>
+<h4 id="example-only-nat-traffic-going-to-the-internet">Example: Only NAT Traffic Going to the Internet</h4>
+<p>Internal hosts should be translated when going to the internet, but <strong>not</strong> when talking to other internal subnets:</p>
+<pre><code>ip access-list extended NAT_INTERNET_ONLY
+ deny ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255
+ permit ip 192.168.1.0 0.0.0.255 any
+
+ip nat inside source list NAT_INTERNET_ONLY interface GigabitEthernet0/1 overload
+</code></pre>
+<h4 id="example-only-nat-traffic-to-a-specific-server">Example: Only NAT Traffic to a Specific Server</h4>
+<pre><code>ip access-list extended NAT_TO_SERVER
+ permit ip 192.168.1.0 0.0.0.255 host 203.0.113.50
+
+ip nat inside source list NAT_TO_SERVER interface GigabitEthernet0/1 overload
+</code></pre>
+<hr />
+<h3 id="nat-with-route-maps-advanced">NAT with Route Maps (Advanced)</h3>
+<p>Route maps let you combine ACLs with interface matching for even more granular NAT control — for example, only translate traffic leaving a specific interface.</p>
+<pre><code>ip access-list extended INTERNAL_TRAFFIC
+ permit ip 192.168.1.0 0.0.0.255 any
+
+route-map NAT_MAP permit 10
+ match ip address INTERNAL_TRAFFIC
+ match interface GigabitEthernet0/1
+
+ip nat inside source route-map NAT_MAP interface GigabitEthernet0/1 overload
+</code></pre>
+<hr />
+<h3 id="clearing-and-verifying-nat">Clearing and Verifying NAT</h3>
+<pre><code>! View active translations
+show ip nat translations
+
+! View NAT stats (hits, misses, active translations)
+show ip nat statistics
+
+! Clear the translation table (useful when changing NAT config)
+clear ip nat translation *
+</code></pre>
+<p><strong>Note:</strong> If you change a NAT configuration, clear the translation table for the new rules to take effect on existing sessions.</p>
+<hr />
+<h3 id="nat-quick-reference">NAT Quick Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>ACL Purpose</th>
+<th>NAT Command Key Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static</td>
+<td>Not needed</td>
+<td><code>source static &lt;private&gt; &lt;public&gt;</code></td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td>Defines which hosts get translated</td>
+<td><code>source list &lt;acl&gt; pool &lt;name&gt;</code></td>
+</tr>
+<tr>
+<td>PAT (interface)</td>
+<td>Defines which hosts get translated</td>
+<td><code>source list &lt;acl&gt; interface &lt;if&gt; overload</code></td>
+</tr>
+<tr>
+<td>PAT (pool)</td>
+<td>Defines which hosts get translated</td>
+<td><code>source list &lt;acl&gt; pool &lt;name&gt; overload</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ntp-network-time-protocol">NTP (Network Time Protocol)</h2>
+<p>Synchronizes clocks across network devices. Accurate time is critical for logging and troubleshooting.</p>
+<pre><code>! Set NTP server
+ntp server 216.239.35.0
+
+! Set timezone
+clock timezone EST -5
+
+! Verify
+show ntp status
+show ntp associations
+show clock
+</code></pre>
+<hr />
+<h2 id="syslog">Syslog</h2>
+<p>Centralized logging for network events.</p>
+<h3 id="severity-levels">Severity Levels</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Emergency</td>
+<td>System is unusable</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Alert</td>
+<td>Immediate action needed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Critical</td>
+<td>Critical conditions</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Error</td>
+<td>Error conditions</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Warning</td>
+<td>Warning conditions</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Notification</td>
+<td>Normal but significant</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Informational</td>
+<td>Informational messages</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Debugging</td>
+<td>Debug-level messages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mnemonic:</strong> <strong>E</strong>very <strong>A</strong>wesome <strong>C</strong>isco <strong>E</strong>ngineer <strong>W</strong>ill <strong>N</strong>eed <strong>I</strong>ce cream <strong>D</strong>aily</p>
+<pre><code>! Send logs to syslog server
+logging host 10.0.0.200
+logging trap informational
+logging source-interface Loopback0
+</code></pre>
+<hr />
+<h2 id="snmp-simple-network-management-protocol">SNMP (Simple Network Management Protocol)</h2>
+<p>Used for monitoring and managing network devices.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Authentication</th>
+<th>Encryption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1</td>
+<td>Community string</td>
+<td>None</td>
+</tr>
+<tr>
+<td>v2c</td>
+<td>Community string</td>
+<td>None</td>
+</tr>
+<tr>
+<td>v3</td>
+<td>Username/password</td>
+<td>Yes (optional)</td>
+</tr>
+</tbody>
+</table>
+<pre><code>! SNMPv2c
+snmp-server community PUBLIC ro
+snmp-server community PRIVATE rw
+snmp-server host 10.0.0.200 version 2c PUBLIC
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

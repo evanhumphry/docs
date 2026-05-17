@@ -1,0 +1,1966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://evahhumphry.com/mysite/ccna/ospf/">
+      
+      
+        <link rel="prev" href="../routing/">
+      
+      
+        <link rel="next" href="../acls/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>OSPF - Evan's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ospf-open-shortest-path-first" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Evan&#39;s Docs" class="md-header__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Evan's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSPF
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../fundamentals/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/commands/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Evan&#39;s Docs" class="md-nav__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Evan's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addressing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addressing & Subnetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../switching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At a Glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSPF Areas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OSPF Areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#router-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neighbor-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbor Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neighbor-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbor States
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drbdr-election" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DR/BDR Election
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSPF Cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-area-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Area OSPF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ip-ospf-interface-command-preferred-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the ip ospf Interface Command (Preferred Method)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-reference-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Reference Bandwidth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface-cost-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Interface Cost Manually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjusting Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drbdr-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DR/BDR Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-area-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Area OSPF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Area OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-summarization-abr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Route Summarization (ABR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-route-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Route Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plain-text-interface-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plain-Text (interface level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md5-interface-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MD5 (interface level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neighbors-not-forming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbors Not Forming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stuck-in-exstartexchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stuck in ExStart/Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stuck-in-2-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stuck in 2-Way
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-things-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Things to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAN Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At a Glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSPF Areas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OSPF Areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#router-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Router Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neighbor-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbor Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neighbor-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbor States
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drbdr-election" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DR/BDR Election
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ospf-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSPF Cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-area-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-Area OSPF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ip-ospf-interface-command-preferred-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the ip ospf Interface Command (Preferred Method)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-reference-bandwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Reference Bandwidth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface-cost-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Interface Cost Manually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-timers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjusting Timers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drbdr-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DR/BDR Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-area-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Area OSPF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Area OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#route-summarization-abr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Route Summarization (ABR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-route-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Route Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plain-text-interface-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plain-Text (interface level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md5-interface-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MD5 (interface level)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neighbors-not-forming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neighbors Not Forming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stuck-in-exstartexchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stuck in ExStart/Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stuck-in-2-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stuck in 2-Way
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-things-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Things to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ospf-open-shortest-path-first">OSPF (Open Shortest Path First)</h1>
+<p>OSPF is a <strong>link-state</strong> routing protocol that uses Dijkstra's SPF algorithm. It is an <strong>open standard</strong> (RFC 2328), uses <strong>IP protocol 89</strong>, and has an <strong>administrative distance of 110</strong>.</p>
+<hr />
+<h2 id="at-a-glance">At a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Link-state (IGP)</td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td>Dijkstra (SPF)</td>
+</tr>
+<tr>
+<td>AD</td>
+<td>110</td>
+</tr>
+<tr>
+<td>Metric</td>
+<td>Cost (reference BW / interface BW)</td>
+</tr>
+<tr>
+<td>Transport</td>
+<td>IP protocol 89 (not TCP or UDP)</td>
+</tr>
+<tr>
+<td>Multicast (all routers)</td>
+<td>224.0.0.5</td>
+</tr>
+<tr>
+<td>Multicast (DR/BDR)</td>
+<td>224.0.0.6</td>
+</tr>
+<tr>
+<td>Hello (broadcast)</td>
+<td>10 seconds</td>
+</tr>
+<tr>
+<td>Hello (non-broadcast)</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td>Dead timer</td>
+<td>4× hello</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ospf-areas">OSPF Areas</h2>
+<p>OSPF uses a hierarchical area structure to limit LSA flooding and reduce routing table size.</p>
+<ul>
+<li><strong>Area 0 (backbone)</strong> — every other area must connect to area 0</li>
+<li><strong>Single-area OSPF</strong> — all routers are in area 0</li>
+<li><strong>Multi-area OSPF</strong> — breaks the domain into areas for scalability</li>
+</ul>
+<h3 id="router-roles">Router Roles</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal Router</td>
+<td>All interfaces in a single area</td>
+</tr>
+<tr>
+<td>ABR (Area Border Router)</td>
+<td>Connects two or more areas, one must be area 0</td>
+</tr>
+<tr>
+<td>ASBR (AS Boundary Router)</td>
+<td>Connects OSPF to a different routing domain (e.g., EIGRP, BGP)</td>
+</tr>
+<tr>
+<td>Backbone Router</td>
+<td>Has at least one interface in area 0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="neighbor-requirements">Neighbor Requirements</h2>
+<p>Two routers must match <strong>all</strong> of the following to become OSPF neighbors:</p>
+<ul>
+<li>Area ID</li>
+<li>Hello and dead timers</li>
+<li>Subnet and mask</li>
+<li>Authentication type and key (if configured)</li>
+<li>Stub area flag</li>
+<li>MTU (must match for adjacency to reach Full state)</li>
+</ul>
+<hr />
+<h2 id="neighbor-states">Neighbor States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>What Happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Down</td>
+<td>No hellos received</td>
+</tr>
+<tr>
+<td>Init</td>
+<td>Hello received, but own RID not seen in neighbor's hello</td>
+</tr>
+<tr>
+<td>2-Way</td>
+<td>Bidirectional — RID seen in neighbor's hello. DR/BDR election occurs here</td>
+</tr>
+<tr>
+<td>ExStart</td>
+<td>Master/slave negotiation for database exchange</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>DBD (Database Description) packets exchanged</td>
+</tr>
+<tr>
+<td>Loading</td>
+<td>LSR/LSU/LSAck — requesting and receiving missing LSAs</td>
+</tr>
+<tr>
+<td>Full</td>
+<td>Databases fully synchronized — adjacency complete</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stuck in 2-Way?</strong> That's normal for DROther-to-DROther relationships on multi-access segments. They don't form full adjacencies with each other.</p>
+<hr />
+<h2 id="drbdr-election">DR/BDR Election</h2>
+<p>On <strong>multi-access networks</strong> (Ethernet), OSPF elects a Designated Router (DR) and Backup DR (BDR) to reduce the number of adjacencies.</p>
+<p><strong>Election rules:</strong></p>
+<ol>
+<li>Highest OSPF <strong>priority</strong> wins (default 1, range 0–255)</li>
+<li>Priority <code>0</code> = <strong>never</strong> become DR/BDR</li>
+<li>If priority ties → highest <strong>Router ID</strong> wins</li>
+<li>Election is <strong>non-preemptive</strong> — a new router with higher priority won't replace the current DR</li>
+</ol>
+<p>On point-to-point links there is <strong>no DR/BDR election</strong>.</p>
+<hr />
+<h2 id="ospf-cost">OSPF Cost</h2>
+<pre><code>Cost = Reference Bandwidth / Interface Bandwidth
+</code></pre>
+<p>Default reference bandwidth is <strong>100 Mbps</strong> (10^8). That means FastEthernet and GigabitEthernet both default to cost 1 — set a higher reference bandwidth so GigE gets a lower cost.</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Default BW</th>
+<th>Default Cost (ref 100M)</th>
+<th>Cost (ref 10G)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FastEthernet</td>
+<td>100 Mbps</td>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>GigabitEthernet</td>
+<td>1 Gbps</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>10 GigabitEthernet</td>
+<td>10 Gbps</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="configuration">Configuration</h2>
+<h3 id="single-area-ospf">Single-Area OSPF</h3>
+<p>All interfaces advertised into area 0.</p>
+<pre><code>router ospf 1
+ router-id 1.1.1.1
+ network 192.168.1.0 0.0.0.255 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ passive-interface GigabitEthernet0/0
+</code></pre>
+<ul>
+<li><code>router ospf 1</code> — the <code>1</code> is the <strong>process ID</strong> (locally significant, does not need to match between routers)</li>
+<li><code>router-id</code> — manually set; otherwise OSPF uses the highest loopback IP, then highest physical IP</li>
+<li><code>passive-interface</code> — stops sending hellos on that interface (use on LAN-facing ports that don't need neighbors)</li>
+</ul>
+<h3 id="using-the-ip-ospf-interface-command-preferred-method">Using the <code>ip ospf</code> Interface Command (Preferred Method)</h3>
+<p>Instead of <code>network</code> statements, you can enable OSPF directly on the interface:</p>
+<pre><code>interface GigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ ip ospf 1 area 0
+
+interface GigabitEthernet0/1
+ ip address 10.0.0.1 255.255.255.252
+ ip ospf 1 area 0
+</code></pre>
+<p>This is cleaner and avoids wildcard mask mistakes.</p>
+<h3 id="setting-reference-bandwidth">Setting Reference Bandwidth</h3>
+<p>Do this on <strong>every</strong> router in the OSPF domain so cost calculations are consistent.</p>
+<pre><code>router ospf 1
+ auto-cost reference-bandwidth 10000
+</code></pre>
+<p>Sets reference to 10 Gbps (10000 Mbps).</p>
+<h3 id="setting-interface-cost-manually">Setting Interface Cost Manually</h3>
+<pre><code>interface GigabitEthernet0/1
+ ip ospf cost 50
+</code></pre>
+<h3 id="adjusting-timers">Adjusting Timers</h3>
+<p>Must match on both sides of a link.</p>
+<pre><code>interface GigabitEthernet0/1
+ ip ospf hello-interval 5
+ ip ospf dead-interval 20
+</code></pre>
+<h3 id="drbdr-priority">DR/BDR Priority</h3>
+<pre><code>interface GigabitEthernet0/0
+ ip ospf priority 200
+</code></pre>
+<p>Set to <code>0</code> to prevent a router from becoming DR/BDR.</p>
+<hr />
+<h2 id="multi-area-ospf">Multi-Area OSPF</h2>
+<h3 id="example-topology">Example Topology</h3>
+<pre><code>[Area 1] --- R1(ABR) --- [Area 0] --- R2(ABR) --- [Area 2]
+</code></pre>
+<p><strong>R1 (ABR between Area 0 and Area 1):</strong></p>
+<pre><code>router ospf 1
+ router-id 1.1.1.1
+
+interface GigabitEthernet0/0
+ ip address 10.0.0.1 255.255.255.0
+ ip ospf 1 area 1
+
+interface GigabitEthernet0/1
+ ip address 172.16.0.1 255.255.255.252
+ ip ospf 1 area 0
+</code></pre>
+<p><strong>R2 (ABR between Area 0 and Area 2):</strong></p>
+<pre><code>router ospf 1
+ router-id 2.2.2.2
+
+interface GigabitEthernet0/0
+ ip address 172.16.0.2 255.255.255.252
+ ip ospf 1 area 0
+
+interface GigabitEthernet0/1
+ ip address 192.168.10.1 255.255.255.0
+ ip ospf 1 area 2
+</code></pre>
+<h3 id="route-summarization-abr">Route Summarization (ABR)</h3>
+<p>Summarize routes at area boundaries to reduce the routing table in other areas.</p>
+<pre><code>router ospf 1
+ area 1 range 10.0.0.0 255.255.252.0
+</code></pre>
+<hr />
+<h2 id="default-route-injection">Default Route Injection</h2>
+<p>Advertise a default route into OSPF from the router that has the internet/default gateway:</p>
+<pre><code>ip route 0.0.0.0 0.0.0.0 203.0.113.1
+
+router ospf 1
+ default-information originate
+</code></pre>
+<p>Use <code>default-information originate always</code> if you want the default route advertised even when the static default doesn't exist in the routing table.</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<h3 id="plain-text-interface-level">Plain-Text (interface level)</h3>
+<pre><code>interface GigabitEthernet0/1
+ ip ospf authentication
+ ip ospf authentication-key MyPassword
+</code></pre>
+<h3 id="md5-interface-level">MD5 (interface level)</h3>
+<pre><code>interface GigabitEthernet0/1
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 SecurePass
+</code></pre>
+<p>Both sides must use the same key ID and password.</p>
+<hr />
+<h2 id="troubleshooting-scenarios">Troubleshooting Scenarios</h2>
+<h3 id="neighbors-not-forming">Neighbors Not Forming</h3>
+<p>Check these in order:</p>
+<ol>
+<li><strong>Layer 1/2</strong> — Is the link up? (<code>show ip interface brief</code>)</li>
+<li><strong>IP addressing</strong> — Are they on the same subnet?</li>
+<li><strong>OSPF enabled?</strong> — Is the interface in the right area? (<code>show ip ospf interface</code>)</li>
+<li><strong>Timers</strong> — Do hello/dead timers match? (<code>show ip ospf interface</code>)</li>
+<li><strong>Area mismatch</strong> — Both ends must be in the same area</li>
+<li><strong>Authentication</strong> — Type and key must match</li>
+<li><strong>MTU mismatch</strong> — Causes stuck in ExStart/Exchange (<code>debug ip ospf adj</code>)</li>
+<li><strong>ACL blocking</strong> — Is protocol 89 or multicast 224.0.0.5/6 being filtered?</li>
+</ol>
+<h3 id="stuck-in-exstartexchange">Stuck in ExStart/Exchange</h3>
+<p>Almost always an <strong>MTU mismatch</strong>. Fix the MTU on both sides:</p>
+<pre><code>interface GigabitEthernet0/1
+ ip mtu 1500
+</code></pre>
+<h3 id="stuck-in-2-way">Stuck in 2-Way</h3>
+<p>Normal for <strong>DROther ↔ DROther</strong> on multi-access segments. Only DR and BDR form full adjacencies with all other routers.</p>
+<hr />
+<h2 id="verification-commands">Verification Commands</h2>
+<pre><code>! View neighbors and their state
+show ip ospf neighbor
+
+! View OSPF-enabled interfaces with area, cost, timers, DR/BDR
+show ip ospf interface brief
+show ip ospf interface GigabitEthernet0/0
+
+! View OSPF routes in the routing table
+show ip route ospf
+
+! View the OSPF database (LSAs)
+show ip ospf database
+
+! View OSPF process details (RID, areas, SPF runs)
+show ip ospf
+
+! Debug adjacency issues
+debug ip ospf adj
+</code></pre>
+<hr />
+<h2 id="key-things-to-remember">Key Things to Remember</h2>
+<ul>
+<li>All areas must connect to <strong>area 0</strong> (backbone)</li>
+<li>Process ID is <strong>locally significant</strong> — doesn't need to match between routers</li>
+<li>Router ID is chosen: manual config &gt; highest loopback &gt; highest physical IP</li>
+<li><code>passive-interface</code> stops hellos but still advertises the network</li>
+<li>DR/BDR election is <strong>non-preemptive</strong> — changing priority won't take effect until the DR/BDR goes down</li>
+<li>Set <code>auto-cost reference-bandwidth</code> on <strong>all routers</strong> to the same value</li>
+<li>The <code>ip ospf</code> interface command is generally preferred over <code>network</code> statements</li>
+<li>OSPF only forms adjacencies over links in the <strong>same area and subnet</strong></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
