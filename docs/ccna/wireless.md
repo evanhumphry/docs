@@ -56,6 +56,29 @@
 | Sniffer     | Captures wireless frames for analysis               |
 | Bridge      | Point-to-point or point-to-multipoint bridging      |
 
+### WLC Ports
+
+Physical connectors on the Wireless LAN Controller.
+
+| Port                          | Purpose                                                                                       |
+|-------------------------------|-----------------------------------------------------------------------------------------------|
+| Console port                  | CLI access over serial (RJ-45 or mini-USB) for initial setup, recovery, and troubleshooting   |
+| Service port                  | Out-of-band management dedicated to recovery/maintenance — always Layer 2, untagged, single IP; carries no AP or client data |
+| Distribution system port (data port) | In-band ports connecting the WLC to the wired network, usually an 802.1Q trunk; carry CAPWAP, client, and management traffic, and can be bundled with LAG |
+| Redundancy port (RP)          | Links two WLCs for High Availability (SSO) to synchronize state between active and standby    |
+
+### WLC Interfaces
+
+Logical interfaces mapped onto the physical ports above.
+
+| Interface    | Purpose                                                                                  |
+|--------------|------------------------------------------------------------------------------------------|
+| Management   | In-band management (GUI, SSH, Telnet, SNMP) and CAPWAP AP discovery/join                  |
+| AP-manager   | Layer 3 source for CAPWAP traffic to APs (older AireOS); often merged into management     |
+| Virtual      | Non-routable address (e.g., 192.0.2.1) for client web authentication, DHCP relay, mobility |
+| Dynamic      | Mapped to client VLANs like an SVI — each WLAN is tied to a dynamic interface             |
+| Service-port | Bound to the physical service port for out-of-band management                            |
+
 ---
 
 ## Wireless Security
