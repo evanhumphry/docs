@@ -340,6 +340,105 @@ show ip interface GigabitEthernet0/0
 
 ---
 
+## DHCP
+
+### DHCP Server
+
+```
+! Exclude addresses you don't want handed out (gateways, servers, etc.)
+ip dhcp excluded-address 192.168.1.1 192.168.1.10
+
+! Create the pool
+ip dhcp pool LAN_POOL
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8 8.8.4.4
+ domain-name example.com
+ lease 7
+```
+
+- `excluded-address` — range of IPs the server will never assign (use for static devices)
+- `default-router` — the default gateway pushed to clients
+- `lease 7` — lease duration in days (default is 1 day; use `lease infinite` for no expiration)
+
+### DHCP Server — Multiple Pools
+
+One pool per subnet. Common when doing inter-VLAN routing:
+
+```
+ip dhcp excluded-address 192.168.10.1
+ip dhcp excluded-address 192.168.20.1
+
+ip dhcp pool VLAN10
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 8.8.8.8
+
+ip dhcp pool VLAN20
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 8.8.8.8
+```
+
+### DHCP Relay (ip helper-address)
+
+When the DHCP server is on a **different subnet** from the clients, the router between them must relay the broadcast. Configure this on the interface **facing the clients**:
+
+```
+interface GigabitEthernet0/0
+ ip helper-address 10.0.0.100
+```
+
+- `10.0.0.100` is the IP of the remote DHCP server
+- You can add multiple `ip helper-address` lines for redundant DHCP servers
+
+```
+interface GigabitEthernet0/0
+ ip helper-address 10.0.0.100
+ ip helper-address 10.0.0.101
+```
+
+### DHCP Client
+
+Configure a router interface to get its IP via DHCP (common on the WAN/ISP-facing interface):
+
+```
+interface GigabitEthernet0/1
+ ip address dhcp
+ no shutdown
+```
+
+### Verify
+
+```
+! View leases the server has handed out
+show ip dhcp binding
+
+! View pool stats (available, leased, excluded)
+show ip dhcp pool
+
+! View DHCP server conflicts
+show ip dhcp conflict
+
+! View the address received on a client interface
+show ip interface GigabitEthernet0/1
+
+! Debug DHCP in real time
+debug ip dhcp server events
+```
+
+### Release and Renew (Client Side)
+
+```
+! Release the current DHCP lease
+release dhcp GigabitEthernet0/1
+
+! Request a new lease
+renew dhcp GigabitEthernet0/1
+```
+
+---
+
 ## Switch — Upgrading IOS
 
 ```
