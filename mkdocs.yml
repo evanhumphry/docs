@@ -29,5 +29,6 @@ nav:
     - Wireless: ccna/wireless.md
     - Commands Reference: ccna/commands.md
   - Linux:
+    - RHCSA Study Guide: linux/rhcsa.md
     - Commands: linux/commands.md
     - Web Server: linux/webserver.md
