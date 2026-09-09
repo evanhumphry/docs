@@ -34,6 +34,17 @@ nav:
     - Network Services: ccna/network-services.md
     - Wireless: ccna/wireless.md
     - Commands Reference: ccna/commands.md
+  - Cisco Telephony:
+    - Overview: cisco-telephony/index.md
+    - Telephony Fundamentals: cisco-telephony/fundamentals.md
+    - Analog Voice Ports: cisco-telephony/analog-ports.md
+    - Dial Peers & Digit Manipulation: cisco-telephony/dial-peers.md
+    - Protocols & Media: cisco-telephony/protocols-media.md
+    - CUCM Call Routing: cisco-telephony/cucm-routing.md
+    - Call Flows & Walkthroughs: cisco-telephony/call-flows.md
+    - Troubleshooting & Commands: cisco-telephony/troubleshooting.md
+    - Migration Guides: cisco-telephony/migrations.md
+    - Vocabulary Reference: cisco-telephony/glossary.md
   - Linux:
     - RHCSA Study Guide: linux/rhcsa.md
     - RHCSA Skills Checklist: linux/rhcsa-checklist.md

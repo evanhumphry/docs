@@ -6,7 +6,13 @@ hide:
 
 # Evan's Docs
 
-A personal reference site for networking, CCNA study notes, and Linux/sysadmin knowledge.
+A personal reference site for networking, Cisco telephony, CCNA study notes, and Linux/system administration.
+
+## Knowledge Areas
+
+- [Cisco Telephony](cisco-telephony/index.md): CUCM call routing, IOS/IOS XE voice gateways, analog ports, dial peers, protocols, troubleshooting, and migrations.
+- **CCNA:** Network fundamentals, switching, routing, security, services, wireless, and command references.
+- **Linux:** RHCSA preparation, command references, and web-server administration.
 
 ---
 
