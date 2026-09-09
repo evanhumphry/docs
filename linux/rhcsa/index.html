@@ -1,0 +1,4987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://evahhumphry.com/mysite/linux/rhcsa/">
+      
+      
+        <link rel="prev" href="../../cisco-telephony/migrations/">
+      
+      
+        <link rel="next" href="../rhcsa-checklist/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>RHCSA Study Guide - Evan's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rhcsa-study-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Evan&#39;s Docs" class="md-header__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Evan's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RHCSA Study Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ccna/fundamentals/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CCNA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cisco-telephony/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Cisco Telephony
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Linux
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Evan&#39;s Docs" class="md-nav__button md-logo" aria-label="Evan's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Evan's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCNA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CCNA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/ip-addressing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addressing & Subnetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/switching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/ospf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/acls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACLs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/wan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WAN Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/network-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ccna/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cisco-telephony/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cisco Telephony
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cisco Telephony
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telephony Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/analog-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog Voice Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Routing & Signaling
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Routing & Signaling
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/dial-peers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dial Peers & Digit Manipulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/dial-plan-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dial-Plan Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/protocols-media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocols & Media
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/sip-cube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIP & CUBE Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/webex-local-gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Webex Calling & Local Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUCM Call Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cisco-telephony/cucm-tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUCM Configuration Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CUCM Configuration Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/phones-lines-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phone, Line & User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/partitions-css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partitions & Calling Search Spaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/site-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Pools, Regions & Locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/sip-trunk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIP Trunk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/pstn-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PSTN Route Groups, Lists & Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/gateways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H.323 & MGCP Gateways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/number-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Transformations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/hunt-groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Line Groups & Hunt Pilots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/media-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media Resource Groups & Lists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-tutorials/verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media & Quality
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Media & Quality
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/qos-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice QoS & Call Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/packet-captures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packet-Capture Walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/dsp-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSP & Media Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/fax-special-devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fax & Special Analog Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/call-flows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call Flows & Walkthroughs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/cucm-diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUCM Diagnostics & Tracing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting & Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/troubleshooting-labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/operational-checklists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Checklists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/monitoring-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience & Change
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resilience & Change
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/srst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SRST & Site Survivability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/emergency-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emergency Calling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/high-availability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High Availability & Failover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco-telephony/migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RHCSA Study Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RHCSA Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Prepare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-understand-and-use-essential-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Understand and Use Essential Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Understand and Use Essential Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-syntax-and-command-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell syntax and command discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-and-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirection and pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-text-with-grep-and-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search text with grep and regular expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-access-and-user-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote access and user switching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archive and compression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-manage-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and manage files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-and-symbolic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard and symbolic links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manage-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manage Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manage Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm-and-dnf-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPM and DNF repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-remove-update-and-inspect-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install, remove, update, and inspect packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flatpak-repositories-and-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flatpak repositories and software
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-simple-shell-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create Simple Shell Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Create Simple Shell Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments-tests-conditionals-loops-and-command-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments, tests, conditionals, loops, and command output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operate-running-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Operate Running Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Operate Running Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-reboot-shut-down-and-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot, reboot, shut down, and targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-boot-to-reset-the-root-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt boot to reset the root password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processes-signals-priority-and-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processes, signals, priority, and tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-and-persistent-journals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs and persistent journals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services-and-secure-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services and secure transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-local-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configure Local Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configure Local Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-disks-and-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect disks and file systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvm-pvs-vgs-and-lvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LVM: PVs, VGs, and LVs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-mount-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and mount file systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-swap-non-destructively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add swap non-destructively
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-a-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extend a file system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NFS mounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autofs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-file-permission-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose file-permission problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-deploy-configure-and-maintain-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Deploy, Configure, and Maintain Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Deploy, Configure, and Maintain Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule-one-time-and-recurring-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule one-time and recurring tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-timer-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        systemd timer units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-enablement-and-default-boot-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service enablement and default boot target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootloader-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bootloader changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-manage-basic-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Manage Basic Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Manage Basic Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ipv4-with-networkmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure IPv4 with NetworkManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure IPv6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewalld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        firewalld
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-manage-users-and-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Manage Users and Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Manage Users and Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-aging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password aging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged-access-with-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privileged access with sudo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-manage-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Manage Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Manage Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-permissions-and-special-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default permissions and special modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH key authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-modes-and-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux modes and status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexts-and-restoring-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexts and restoring labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-port-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux port labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-booleans-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux Booleans and troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-to-memorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts to Memorize
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts to Memorize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filesystem-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filesystem hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-unit-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd unit states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-risk-exam-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-risk exam mistakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-practice-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Practice Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rhcsa-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RHCSA Skills Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Prepare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-understand-and-use-essential-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Understand and Use Essential Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Understand and Use Essential Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-syntax-and-command-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell syntax and command discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-and-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirection and pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-text-with-grep-and-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search text with grep and regular expressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-access-and-user-switching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote access and user switching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archive-and-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archive and compression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-manage-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and manage files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-and-symbolic-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard and symbolic links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manage-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manage Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manage Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm-and-dnf-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPM and DNF repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-remove-update-and-inspect-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install, remove, update, and inspect packages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flatpak-repositories-and-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flatpak repositories and software
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-simple-shell-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create Simple Shell Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Create Simple Shell Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments-tests-conditionals-loops-and-command-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments, tests, conditionals, loops, and command output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operate-running-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Operate Running Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Operate Running Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-reboot-shut-down-and-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot, reboot, shut down, and targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-boot-to-reset-the-root-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt boot to reset the root password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processes-signals-priority-and-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processes, signals, priority, and tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs-and-persistent-journals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs and persistent journals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services-and-secure-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services and secure transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-local-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configure Local Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configure Local Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-disks-and-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect disks and file systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT partitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lvm-pvs-vgs-and-lvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LVM: PVs, VGs, and LVs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-mount-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create and mount file systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-swap-non-destructively" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add swap non-destructively
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-a-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extend a file system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfs-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NFS mounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autofs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-file-permission-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnose file-permission problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-deploy-configure-and-maintain-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Deploy, Configure, and Maintain Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Deploy, Configure, and Maintain Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule-one-time-and-recurring-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule one-time and recurring tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-timer-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        systemd timer units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-enablement-and-default-boot-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service enablement and default boot target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootloader-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bootloader changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-manage-basic-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Manage Basic Networking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Manage Basic Networking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inspect-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect networking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ipv4-with-networkmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure IPv4 with NetworkManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure IPv6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hostname resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewalld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        firewalld
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-manage-users-and-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Manage Users and Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Manage Users and Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-aging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password aging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privileged-access-with-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privileged access with sudo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-manage-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Manage Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Manage Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-permissions-and-special-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default permissions and special modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-key-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSH key authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-modes-and-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux modes and status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexts-and-restoring-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexts and restoring labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-port-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux port labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selinux-booleans-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SELinux Booleans and troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-to-memorize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts to Memorize
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts to Memorize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filesystem-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filesystem hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-unit-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systemd unit states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-risk-exam-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-risk exam mistakes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-practice-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Practice Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rhcsa-study-guide">RHCSA Study Guide</h1>
+<p>A command-focused supplement for the <strong>Red Hat Certified System Administrator (RHCSA), EX200</strong> performance-based exam. This page follows the current <a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam">official Red Hat exam objectives</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Check the objectives before the exam</p>
+<p>Red Hat can revise EX200. Confirm the official objectives and the RHEL version used by your scheduled exam. Practice on that version whenever possible.</p>
+</div>
+<h2 id="how-to-prepare">How to Prepare</h2>
+<p>The RHCSA is practical: you configure real systems instead of answering multiple-choice questions. Practice each task until you can complete it from a plain shell, verify it, and make it survive a reboot.</p>
+<p>For every lab:</p>
+<ol>
+<li>Read the task carefully and note whether the change must be permanent.</li>
+<li>Inspect the current state before changing it.</li>
+<li>Make the smallest correct change.</li>
+<li>Verify with a second command.</li>
+<li>Reboot when practical and verify again.</li>
+</ol>
+<p>Know how to find help locally when you forget syntax:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Open the command's manual page; press / to search and q to quit</span>
+man<span class="w"> </span><span class="nb">command</span>
+<span class="c1"># Show the command's built-in usage summary</span>
+<span class="nb">command</span><span class="w"> </span>--help
+<span class="c1"># Search manual-page descriptions for a keyword</span>
+apropos<span class="w"> </span>keyword
+man<span class="w"> </span>-k<span class="w"> </span>keyword<span class="w">                    </span><span class="c1"># Equivalent keyword search through man</span>
+info<span class="w"> </span><span class="nb">command</span><span class="w">                      </span><span class="c1"># Open the GNU Info documentation</span>
+ls<span class="w"> </span>/usr/share/doc<span class="w">                 </span><span class="c1"># List package-supplied documentation</span>
+</code></pre></div>
+<hr />
+<h2 id="1-understand-and-use-essential-tools">1. Understand and Use Essential Tools</h2>
+<h3 id="shell-syntax-and-command-discovery">Shell syntax and command discovery</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Identify commands and shell built-ins</span>
+<span class="nb">type</span><span class="w"> </span><span class="nb">cd</span><span class="w">                           </span><span class="c1"># Report whether cd is a built-in, alias, or file</span>
+<span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>useradd<span class="w">                </span><span class="c1"># Print what the shell would execute</span>
+which<span class="w"> </span>ssh<span class="w">                         </span><span class="c1"># Locate the executable found in PATH</span>
+
+<span class="c1"># Quote strings and expand variables</span>
+<span class="nv">name</span><span class="o">=</span><span class="s2">"Evan Humphry"</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span><span class="w">             </span><span class="c1"># %s prints a string; \n adds a newline</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span><span class="w">                     </span><span class="c1"># Double quotes allow $HOME expansion</span>
+
+<span class="c1"># Run sequentially, on success, or on failure</span>
+command1<span class="w"> </span><span class="p">;</span><span class="w"> </span>command2<span class="w">               </span><span class="c1"># Run command2 regardless of command1's status</span>
+command1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>command2<span class="w">              </span><span class="c1"># Run command2 only if command1 succeeds</span>
+command1<span class="w"> </span><span class="o">||</span><span class="w"> </span>command2<span class="w">              </span><span class="c1"># Run command2 only if command1 fails</span>
+</code></pre></div>
+<p>Memorize:</p>
+<ul>
+<li><strong>Absolute path:</strong> begins with <code>/</code>; <strong>relative path:</strong> begins from the current directory.</li>
+<li><code>.</code> is the current directory, <code>..</code> is its parent, and <code>~</code> is the current user's home.</li>
+<li>Single quotes preserve text literally; double quotes still expand variables and command substitutions.</li>
+<li>Exit status <code>0</code> means success; nonzero means failure. Check it with <code>echo $?</code>.</li>
+</ul>
+<h3 id="redirection-and-pipelines">Redirection and pipelines</h3>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>Replace a file with standard output</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Append standard output</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Read standard input from a file</td>
+</tr>
+<tr>
+<td><code>2&gt;</code></td>
+<td>Redirect standard error</td>
+</tr>
+<tr>
+<td><code>2&gt;&amp;1</code></td>
+<td>Send standard error to the same place as standard output</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Send one command's output to another command</td>
+</tr>
+<tr>
+<td><code>tee</code></td>
+<td>Write to a file and display output</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1"># Save normal output and errors in separate files</span>
+find<span class="w"> </span>/etc<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.conf'</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/configs<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/tmp/find-errors
+<span class="c1"># &amp;&gt; redirects both standard output and standard error</span>
+find<span class="w"> </span>/etc<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.conf'</span><span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>/tmp/all-output
+<span class="c1"># -i ignores case; uniq -c counts adjacent duplicate lines after sorting</span>
+grep<span class="w"> </span>-i<span class="w"> </span>error<span class="w"> </span>/var/log/messages<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
+<span class="c1"># tee -a appends as root while also displaying the line</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'%s\n'</span><span class="w"> </span><span class="s1">'line'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/example.conf
+</code></pre></div>
+<h3 id="search-text-with-grep-and-regular-expressions">Search text with grep and regular expressions</h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>root<span class="w"> </span>/etc/passwd<span class="w">                   </span><span class="c1"># Print lines containing root</span>
+grep<span class="w"> </span>-i<span class="w"> </span>warning<span class="w"> </span>file<span class="w">                    </span><span class="c1"># -i: ignore letter case</span>
+grep<span class="w"> </span>-n<span class="w"> </span><span class="s1">'^server'</span><span class="w"> </span>file<span class="w">                  </span><span class="c1"># -n: include matching line numbers</span>
+grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">'^#'</span><span class="w"> </span>file<span class="w">                       </span><span class="c1"># -v: invert the match; exclude comments</span>
+grep<span class="w"> </span>-r<span class="w"> </span><span class="s1">'PermitRootLogin'</span><span class="w"> </span>/etc/ssh<span class="w">      </span><span class="c1"># -r: search directories recursively</span>
+grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^(root|wheel):'</span><span class="w"> </span>/etc/group<span class="w">     </span><span class="c1"># -E: use extended regular expressions</span>
+</code></pre></div>
+<p>Regular-expression anchors and wildcards to memorize:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^text</code></td>
+<td><code>text</code> at the beginning of a line</td>
+</tr>
+<tr>
+<td><code>text$</code></td>
+<td><code>text</code> at the end of a line</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Any one character</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Zero or more of the previous item</td>
+</tr>
+<tr>
+<td><code>[0-9]</code></td>
+<td>One character in the range</td>
+</tr>
+<tr>
+<td><code>[^0-9]</code></td>
+<td>One character not in the range</td>
+</tr>
+<tr>
+<td><code>word\+</code></td>
+<td>One or more in basic regex; use <code>word+</code> with <code>grep -E</code></td>
+</tr>
+</tbody>
+</table>
+<p>Shell globs are not regular expressions: <code>*.log</code> is a filename pattern interpreted by the shell.</p>
+<h3 id="remote-access-and-user-switching">Remote access and user switching</h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>user@server<span class="w">                         </span><span class="c1"># Open a remote shell as user</span>
+ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span>user@server<span class="w">                 </span><span class="c1"># -p: connect to TCP port 2222</span>
+sudo<span class="w"> </span><span class="nb">command</span><span class="w">                            </span><span class="c1"># Run one command with delegated privileges</span>
+sudo<span class="w"> </span>-i<span class="w">                                 </span><span class="c1"># -i: start root's login shell</span>
+su<span class="w"> </span>-<span class="w"> </span>user<span class="w">                               </span><span class="c1"># -: load the target user's login environment</span>
+who<span class="w">                                     </span><span class="c1"># Show currently logged-in sessions</span>
+w<span class="w">                                       </span><span class="c1"># Show logged-in users and their activity</span>
+last<span class="w">                                    </span><span class="c1"># Show login history from the wtmp database</span>
+</code></pre></div>
+<p>The <code>-</code> in <code>su - user</code> loads the target user's login environment. Without it, environment variables and the working directory may be inherited.</p>
+<h3 id="archive-and-compression">Archive and compression</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create and extract an uncompressed tar archive</span>
+tar<span class="w"> </span>-cvf<span class="w"> </span>backup.tar<span class="w"> </span>/etc<span class="w">                 </span><span class="c1"># -c create, -v list files, -f name archive</span>
+mkdir<span class="w"> </span>/tmp/restore<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>backup.tar<span class="w"> </span>-C<span class="w"> </span>/tmp/restore
+<span class="w">                                         </span><span class="c1"># -x extract; -C change directory first</span>
+
+<span class="c1"># gzip</span>
+tar<span class="w"> </span>-czvf<span class="w"> </span>backup.tar.gz<span class="w"> </span>/etc<span class="w">             </span><span class="c1"># -z: compress with gzip</span>
+tar<span class="w"> </span>-xzvf<span class="w"> </span>backup.tar.gz<span class="w"> </span>-C<span class="w"> </span>/tmp/restore<span class="w">  </span><span class="c1"># -z: decompress gzip archive</span>
+
+<span class="c1"># bzip2</span>
+tar<span class="w"> </span>-cjvf<span class="w"> </span>backup.tar.bz2<span class="w"> </span>/etc<span class="w">            </span><span class="c1"># -j: compress with bzip2</span>
+tar<span class="w"> </span>-xjvf<span class="w"> </span>backup.tar.bz2<span class="w"> </span>-C<span class="w"> </span>/tmp/restore<span class="w"> </span><span class="c1"># -j: decompress bzip2 archive</span>
+
+<span class="c1"># Inspect without extracting</span>
+tar<span class="w"> </span>-tvf<span class="w"> </span>backup.tar.gz<span class="w">                   </span><span class="c1"># -t: list archive contents</span>
+
+gzip<span class="w"> </span>file
+gunzip<span class="w"> </span>file.gz
+bzip2<span class="w"> </span>file
+bunzip2<span class="w"> </span>file.bz2
+</code></pre></div>
+<p>Tar letters: <code>c</code> create, <code>x</code> extract, <code>t</code> list, <code>v</code> verbose, <code>f</code> archive file, <code>z</code> gzip, <code>j</code> bzip2, <code>C</code> change extraction directory.</p>
+<h3 id="create-and-manage-files">Create and manage files</h3>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>file<span class="w">                               </span><span class="c1"># Create an empty file or update its timestamps</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>project/<span class="o">{</span>docs,data<span class="o">}</span><span class="w">             </span><span class="c1"># -p creates parents; braces create both subdirs</span>
+cp<span class="w"> </span>file<span class="w"> </span>copy<span class="w">                             </span><span class="c1"># Copy a file</span>
+cp<span class="w"> </span>-a<span class="w"> </span>source_dir<span class="w"> </span>destination_dir<span class="w">         </span><span class="c1"># -a preserves metadata and copies recursively</span>
+mv<span class="w"> </span>old<span class="w"> </span>new<span class="w">                               </span><span class="c1"># Move or rename a path</span>
+rm<span class="w"> </span>file<span class="w">                                  </span><span class="c1"># Remove one file</span>
+rm<span class="w"> </span>-r<span class="w"> </span>directory<span class="w">                          </span><span class="c1"># -r: remove a directory tree recursively</span>
+install<span class="w"> </span>-m<span class="w"> </span><span class="m">0640</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>/path/to/destination
+<span class="w">                                         </span><span class="c1"># Copy and set mode 0640 in one operation</span>
+
+<span class="c1"># Inspect content</span>
+cat<span class="w"> </span>file
+less<span class="w"> </span>file
+head<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>file<span class="w">                          </span><span class="c1"># -n 20: show the first 20 lines</span>
+tail<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>file<span class="w">                          </span><span class="c1"># -n 20: show the last 20 lines</span>
+tail<span class="w"> </span>-f<span class="w"> </span>/var/log/messages<span class="w">                </span><span class="c1"># -f: follow appended log entries</span>
+
+<span class="c1"># Locate files</span>
+find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.log'</span><span class="w">      </span><span class="c1"># Regular files whose names end in .log</span>
+find<span class="w"> </span>/home<span class="w"> </span>-user<span class="w"> </span>student<span class="w"> </span>-type<span class="w"> </span>f<span class="w">         </span><span class="c1"># Regular files owned by student</span>
+find<span class="w"> </span>/tmp<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>+7<span class="w">              </span><span class="c1"># Files modified more than seven days ago</span>
+locate<span class="w"> </span>filename<span class="w">                     </span><span class="c1"># Database-backed; may need updatedb</span>
+</code></pre></div>
+<h3 id="hard-and-symbolic-links">Hard and symbolic links</h3>
+<div class="highlight"><pre><span></span><code>ln<span class="w"> </span><span class="nb">source</span><span class="w"> </span>hardlink<span class="w">                       </span><span class="c1"># Create another hard link to the same inode</span>
+ln<span class="w"> </span>-s<span class="w"> </span>/absolute/path/to/source<span class="w"> </span>symlink<span class="w">   </span><span class="c1"># -s: create a symbolic link storing a path</span>
+ls<span class="w"> </span>-li<span class="w"> </span><span class="nb">source</span><span class="w"> </span>hardlink<span class="w"> </span>symlink<span class="w">           </span><span class="c1"># -i: display inode numbers; -l: long format</span>
+readlink<span class="w"> </span>-f<span class="w"> </span>symlink<span class="w">                      </span><span class="c1"># -f: resolve every link to a canonical path</span>
+</code></pre></div>
+<p>Memorize:</p>
+<ul>
+<li>A <strong>hard link</strong> is another directory entry for the same inode. It normally cannot cross file systems or link directories.</li>
+<li>A <strong>symbolic link</strong> stores a path. It can cross file systems and becomes dangling if its target disappears.</li>
+<li>Removing one hard-link name does not remove the data while another hard link exists.</li>
+</ul>
+<h3 id="standard-permissions">Standard permissions</h3>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-ld<span class="w"> </span>file<span class="w"> </span>directory<span class="w">                    </span><span class="c1"># -l long format; -d inspect directory itself</span>
+chmod<span class="w"> </span><span class="m">640</span><span class="w"> </span>file<span class="w">                           </span><span class="c1"># Owner rw, group r, others no access</span>
+chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>rw,g<span class="o">=</span>r,o<span class="o">=</span><span class="w"> </span>file<span class="w">                   </span><span class="c1"># Same mode expressed symbolically</span>
+chmod<span class="w"> </span>-R<span class="w"> </span>g+rX<span class="w"> </span>directory<span class="w">                  </span><span class="c1"># -R recursive; X adds execute only where useful</span>
+chown<span class="w"> </span>user:group<span class="w"> </span>file<span class="w">                    </span><span class="c1"># Change both owner and group</span>
+chgrp<span class="w"> </span>group<span class="w"> </span>file<span class="w">                         </span><span class="c1"># Change only the group</span>
+</code></pre></div>
+<p>Permission values: <code>r=4</code>, <code>w=2</code>, <code>x=1</code>.</p>
+<p>Directory permissions differ from file permissions:</p>
+<ul>
+<li><code>r</code>: list names in the directory.</li>
+<li><code>w</code>: create or remove entries.</li>
+<li><code>x</code>: traverse/access entries.</li>
+</ul>
+<hr />
+<h2 id="2-manage-software">2. Manage Software</h2>
+<h3 id="rpm-and-dnf-repositories">RPM and DNF repositories</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Inspect repositories</span>
+dnf<span class="w"> </span>repolist<span class="w"> </span>--all<span class="w">                       </span><span class="c1"># Include enabled and disabled repositories</span>
+dnf<span class="w"> </span>repoinfo<span class="w">                             </span><span class="c1"># Show details for enabled repositories</span>
+cat<span class="w"> </span>/etc/yum.repos.d/*.repo
+
+<span class="c1"># Add a repository (dnf-plugins-core may be required)</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>config-manager<span class="w"> </span>--add-repo<span class="w"> </span>https://example.com/repo.repo
+<span class="w">                                         </span><span class="c1"># Download and create a repository definition</span>
+
+<span class="c1"># Minimal .repo file</span>
+<span class="c1"># sudo gives tee permission to write; quoted 'EOF' preserves DNF variables literally</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/yum.repos.d/example.repo<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="s">&lt;&lt;'EOF'</span>
+<span class="s">[example]</span>
+<span class="s">name=Example Repository</span>
+<span class="s">baseurl=https://repo.example.com/rhel/$releasever/$basearch/</span>
+<span class="s">enabled=1</span>
+<span class="s">gpgcheck=1</span>
+<span class="s">gpgkey=https://repo.example.com/RPM-GPG-KEY-example</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>dnf<span class="w"> </span>clean<span class="w"> </span>all<span class="w">                       </span><span class="c1"># Remove all cached repository metadata/packages</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>makecache<span class="w">                       </span><span class="c1"># Download fresh repository metadata</span>
+</code></pre></div>
+<h3 id="install-remove-update-and-inspect-packages">Install, remove, update, and inspect packages</h3>
+<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>search<span class="w"> </span>keyword<span class="w">                       </span><span class="c1"># Search package names and descriptions</span>
+dnf<span class="w"> </span>provides<span class="w"> </span><span class="s1">'*/semanage'</span><span class="w">                </span><span class="c1"># Find which package supplies this path/name</span>
+dnf<span class="w"> </span>info<span class="w"> </span>httpd<span class="w">                           </span><span class="c1"># Show package metadata</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>httpd<span class="w">                   </span><span class="c1"># Install package and dependencies</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>./package.rpm<span class="w">           </span><span class="c1"># Install a local RPM with dependencies</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>remove<span class="w"> </span>httpd<span class="w">                    </span><span class="c1"># Remove package and unneeded dependencies</span>
+sudo<span class="w"> </span>dnf<span class="w"> </span>update<span class="w">                          </span><span class="c1"># Upgrade all installed packages</span>
+
+dnf<span class="w"> </span>list<span class="w"> </span>installed<span class="w">                       </span><span class="c1"># List installed packages</span>
+rpm<span class="w"> </span>-q<span class="w"> </span>bash<span class="w">                              </span><span class="c1"># -q: query whether bash is installed</span>
+rpm<span class="w"> </span>-qi<span class="w"> </span>bash<span class="w">                             </span><span class="c1"># -i: show package information</span>
+rpm<span class="w"> </span>-ql<span class="w"> </span>bash<span class="w">                             </span><span class="c1"># -l: list files owned by the package</span>
+rpm<span class="w"> </span>-qf<span class="w"> </span>/usr/bin/ssh<span class="w">                     </span><span class="c1"># -f: identify the package owning a file</span>
+rpm<span class="w"> </span>-V<span class="w"> </span>package-name<span class="w">                      </span><span class="c1"># -V: verify installed files against RPM metadata</span>
+</code></pre></div>
+<p>Use <code>dnf</code> for installation because it resolves dependencies. Use <code>rpm</code> mainly to query or verify package contents.</p>
+<p>On registered systems, know the basic subscription commands:</p>
+<div class="highlight"><pre><span></span><code>subscription-manager<span class="w"> </span>status<span class="w">              </span><span class="c1"># Show registration/subscription status</span>
+subscription-manager<span class="w"> </span>repos<span class="w"> </span>--list-enabled<span class="w"> </span><span class="c1"># List currently enabled Red Hat repositories</span>
+subscription-manager<span class="w"> </span>repos<span class="w"> </span>--enable<span class="o">=</span>REPOSITORY_ID
+<span class="w">                                         </span><span class="c1"># Enable the repository persistently</span>
+</code></pre></div>
+<h3 id="flatpak-repositories-and-software">Flatpak repositories and software</h3>
+<div class="highlight"><pre><span></span><code>flatpak<span class="w"> </span>remotes<span class="w">                           </span><span class="c1"># List configured Flatpak repositories</span>
+flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://flathub.org/repo/flathub.flatpakrepo
+<span class="w">                                          </span><span class="c1"># Add Flathub only if it is not configured</span>
+flatpak<span class="w"> </span>search<span class="w"> </span>APPLICATION<span class="w">                </span><span class="c1"># Search remotes for an application</span>
+flatpak<span class="w"> </span>install<span class="w"> </span>flathub<span class="w"> </span>APP_ID<span class="w">             </span><span class="c1"># Install APP_ID from the flathub remote</span>
+flatpak<span class="w"> </span>list<span class="w">                               </span><span class="c1"># List installed runtimes and applications</span>
+flatpak<span class="w"> </span>run<span class="w"> </span>APP_ID<span class="w">                         </span><span class="c1"># Launch an installed application</span>
+flatpak<span class="w"> </span>update<span class="w">                             </span><span class="c1"># Update installed Flatpaks</span>
+flatpak<span class="w"> </span>uninstall<span class="w"> </span>APP_ID<span class="w">                   </span><span class="c1"># Remove an application</span>
+flatpak<span class="w"> </span>remote-delete<span class="w"> </span>REMOTE<span class="w">               </span><span class="c1"># Remove a configured remote</span>
+</code></pre></div>
+<p>System-wide is the default when run as root; <code>--user</code> installs for only the current user.</p>
+<hr />
+<h2 id="3-create-simple-shell-scripts">3. Create Simple Shell Scripts</h2>
+<p>Start scripts with a shebang and make them executable:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">set</span><span class="w"> </span>-u<span class="w">                                  </span><span class="c1"># Treat an unset variable as an error</span>
+
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">world</span><span class="si">}</span><span class="w">                        </span><span class="c1"># Use $1, or "world" when $1 is unset/empty</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'Hello, %s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>script.sh<span class="w">                       </span><span class="c1"># Add execute permission</span>
+./script.sh<span class="w"> </span>Evan<span class="w">                         </span><span class="c1"># Run from the current directory with argument $1</span>
+bash<span class="w"> </span>-n<span class="w"> </span>script.sh<span class="w">                        </span><span class="c1"># -n: parse only; check syntax without running</span>
+</code></pre></div>
+<h3 id="arguments-tests-conditionals-loops-and-command-output">Arguments, tests, conditionals, loops, and command output</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$#</span><span class="s2">"</span><span class="w"> </span>-lt<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w">                 </span><span class="c1"># Require at least one positional argument</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> USER..."</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w">          </span><span class="c1"># &gt;&amp;2 sends the diagnostic to standard error</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">2</span><span class="w">                               </span><span class="c1"># Return a nonzero status for invalid usage</span>
+<span class="k">fi</span>
+
+<span class="k">for</span><span class="w"> </span>user<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">                     </span><span class="c1"># Iterate over arguments without losing spaces</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>id<span class="w"> </span><span class="s2">"</span><span class="nv">$user</span><span class="s2">"</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w">      </span><span class="c1"># Test existence; discard normal output and errors</span>
+<span class="w">        </span><span class="nv">home</span><span class="o">=</span><span class="k">$(</span>getent<span class="w"> </span>passwd<span class="w"> </span><span class="s2">"</span><span class="nv">$user</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f6<span class="k">)</span>
+<span class="w">                                            </span><span class="c1"># -d: colon delimiter; -f6: home field</span>
+<span class="w">        </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%s: %s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$user</span><span class="s2">"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$home</span><span class="s2">"</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'User not found: %s\n'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$user</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
+<p>Memorize:</p>
+<ul>
+<li><code>$0</code>: script name; <code>$1</code>, <code>$2</code>: positional parameters.</li>
+<li><code>$#</code>: number of parameters; <code>"$@"</code>: each argument preserved as a separate word.</li>
+<li><code>$(command)</code>: command substitution.</li>
+<li>String tests: <code>-z</code>, <code>-n</code>, <code>=</code>, <code>!=</code>.</li>
+<li>Integer tests: <code>-eq</code>, <code>-ne</code>, <code>-lt</code>, <code>-le</code>, <code>-gt</code>, <code>-ge</code>.</li>
+<li>File tests: <code>-e</code>, <code>-f</code>, <code>-d</code>, <code>-r</code>, <code>-w</code>, <code>-x</code>.</li>
+<li>Quote variable expansions unless word splitting is specifically intended.</li>
+</ul>
+<hr />
+<h2 id="4-operate-running-systems">4. Operate Running Systems</h2>
+<h3 id="boot-reboot-shut-down-and-targets">Boot, reboot, shut down, and targets</h3>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>reboot<span class="w">                          </span><span class="c1"># Ask systemd to reboot now</span>
+systemctl<span class="w"> </span>poweroff<span class="w">                        </span><span class="c1"># Shut down and power off now</span>
+shutdown<span class="w"> </span>-r<span class="w"> </span>+5<span class="w"> </span><span class="s2">"Maintenance reboot"</span><span class="w">       </span><span class="c1"># -r reboot in five minutes; notify users</span>
+shutdown<span class="w"> </span>-c<span class="w">                              </span><span class="c1"># -c: cancel a pending shutdown</span>
+
+systemctl<span class="w"> </span>get-default<span class="w">                     </span><span class="c1"># Show the target used at boot</span>
+systemctl<span class="w"> </span>set-default<span class="w"> </span>multi-user.target<span class="w">   </span><span class="c1"># Persistently select non-graphical boot</span>
+systemctl<span class="w"> </span>isolate<span class="w"> </span>rescue.target<span class="w">           </span><span class="c1"># Switch the running system to rescue mode</span>
+systemctl<span class="w"> </span>isolate<span class="w"> </span>multi-user.target<span class="w">       </span><span class="c1"># Return to non-graphical multiuser mode</span>
+systemctl<span class="w"> </span>list-units<span class="w"> </span>--type<span class="o">=</span>target<span class="w">        </span><span class="c1"># List currently loaded target units</span>
+</code></pre></div>
+<p>Common targets:</p>
+<ul>
+<li><code>multi-user.target</code>: non-graphical, multiuser system.</li>
+<li><code>graphical.target</code>: multiuser system with graphical login.</li>
+<li><code>rescue.target</code>: single-user recovery with local file systems.</li>
+<li><code>emergency.target</code>: minimal shell with few services and the root file system often read-only.</li>
+</ul>
+<h3 id="interrupt-boot-to-reset-the-root-password">Interrupt boot to reset the root password</h3>
+<p>Practice this exact workflow on the exam's RHEL version:</p>
+<ol>
+<li>At GRUB, press <code>e</code> on the kernel entry.</li>
+<li>Append <code>rd.break</code> to the line beginning with <code>linux</code>.</li>
+<li>Press <code>Ctrl+x</code> to boot.</li>
+<li>Remount the real root file system read-write, chroot, reset the password, and request relabeling:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mount<span class="w"> </span>-o<span class="w"> </span>remount,rw<span class="w"> </span>/sysroot<span class="w">              </span><span class="c1"># Remount the real root read-write</span>
+chroot<span class="w"> </span>/sysroot<span class="w">                           </span><span class="c1"># Make /sysroot the shell's apparent /</span>
+passwd<span class="w"> </span>root<span class="w">                               </span><span class="c1"># Set a new root password</span>
+touch<span class="w"> </span>/.autorelabel<span class="w">                       </span><span class="c1"># Request a full SELinux relabel next boot</span>
+<span class="nb">exit</span><span class="w">                                     </span><span class="c1"># Leave the chroot</span>
+<span class="nb">exit</span><span class="w">                                     </span><span class="c1"># Leave the rd.break shell and continue booting</span>
+</code></pre></div>
+<p>SELinux relabeling can make the next boot take longer. The exact recovery flow can change by RHEL release, so verify it in the documentation available for the version used by your exam.</p>
+<h3 id="processes-signals-priority-and-tuning">Processes, signals, priority, and tuning</h3>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>aux<span class="w">                                    </span><span class="c1"># BSD-style snapshot of all users' processes</span>
+ps<span class="w"> </span>-ef<span class="w">                                    </span><span class="c1"># POSIX-style full-format process snapshot</span>
+pgrep<span class="w"> </span>-a<span class="w"> </span>process-name<span class="w">                     </span><span class="c1"># -a: show PIDs and full command lines</span>
+top
+systemctl<span class="w"> </span>status<span class="w"> </span>service
+
+<span class="nb">kill</span><span class="w"> </span>PID<span class="w">                 </span><span class="c1"># SIGTERM: request graceful termination</span>
+<span class="nb">kill</span><span class="w"> </span>-15<span class="w"> </span>PID
+<span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>PID<span class="w">              </span><span class="c1"># SIGKILL: immediate; use only when needed</span>
+pkill<span class="w"> </span>process-name<span class="w">                        </span><span class="c1"># Send SIGTERM to processes matching the name</span>
+
+nice<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="nb">command</span><span class="w">                        </span><span class="c1"># Start with nice value 10 (lower priority)</span>
+renice<span class="w"> </span><span class="m">5</span><span class="w"> </span>-p<span class="w"> </span>PID<span class="w">                           </span><span class="c1"># Set an existing process's nice value to 5</span>
+ps<span class="w"> </span>-o<span class="w"> </span>pid,ni,pri,cmd<span class="w"> </span>-p<span class="w"> </span>PID<span class="w">               </span><span class="c1"># -o selects columns; -p selects one PID</span>
+
+systemctl<span class="w"> </span>status<span class="w"> </span>tuned
+tuned-adm<span class="w"> </span>list<span class="w">                            </span><span class="c1"># List available performance profiles</span>
+tuned-adm<span class="w"> </span>active<span class="w">                          </span><span class="c1"># Show the active profile</span>
+sudo<span class="w"> </span>tuned-adm<span class="w"> </span>profile<span class="w"> </span>throughput-performance
+sudo<span class="w"> </span>tuned-adm<span class="w"> </span>recommend<span class="w">                  </span><span class="c1"># Show the profile tuned recommends</span>
+</code></pre></div>
+<p>Lower nice values mean higher CPU scheduling priority. Ordinary users can increase the nice value (lower priority); raising priority generally requires root.</p>
+<h3 id="logs-and-persistent-journals">Logs and persistent journals</h3>
+<div class="highlight"><pre><span></span><code>journalctl
+journalctl<span class="w"> </span>-b<span class="w">                             </span><span class="c1"># -b: current boot only</span>
+journalctl<span class="w"> </span>-b<span class="w"> </span>-1<span class="w">                          </span><span class="c1"># -1: boot immediately before current boot</span>
+journalctl<span class="w"> </span>-u<span class="w"> </span>sshd<span class="w">                        </span><span class="c1"># -u: messages from the sshd unit</span>
+journalctl<span class="w"> </span>--since<span class="w"> </span>today<span class="w">                  </span><span class="c1"># Limit entries by start time</span>
+journalctl<span class="w"> </span>-p<span class="w"> </span>err<span class="w">                         </span><span class="c1"># -p: err priority and more severe</span>
+journalctl<span class="w"> </span>-f<span class="w">                             </span><span class="c1"># -f: follow new entries live</span>
+systemctl<span class="w"> </span>status<span class="w"> </span>systemd-journald
+ls<span class="w"> </span>/var/log
+</code></pre></div>
+<p>Enable persistent journal storage:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/log/journal<span class="w">            </span><span class="c1"># Create the persistent journal directory</span>
+sudo<span class="w"> </span>systemd-tmpfiles<span class="w"> </span>--create<span class="w"> </span>--prefix<span class="w"> </span>/var/log/journal
+<span class="w">                                          </span><span class="c1"># Apply tmpfiles ownership/mode rules to it</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-journald
+journalctl<span class="w"> </span>--list-boots<span class="w">                   </span><span class="c1"># Verify that boot journals are retained</span>
+</code></pre></div>
+<p>Alternatively set <code>Storage=persistent</code> under <code>[Journal]</code> in <code>/etc/systemd/journald.conf</code>, restart <code>systemd-journald</code>, and verify after a reboot.</p>
+<h3 id="services-and-secure-transfers">Services and secure transfers</h3>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>sshd
+systemctl<span class="w"> </span>start<span class="w"> </span>sshd<span class="w">                      </span><span class="c1"># Start now; does not imply boot enablement</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span>sshd<span class="w">                       </span><span class="c1"># Stop now</span>
+systemctl<span class="w"> </span>restart<span class="w"> </span>sshd<span class="w">                    </span><span class="c1"># Stop and start the service</span>
+systemctl<span class="w"> </span>reload<span class="w"> </span>sshd<span class="w">                     </span><span class="c1"># Re-read configuration without a full restart</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>sshd<span class="w">               </span><span class="c1"># Enable at boot and start immediately</span>
+systemctl<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>sshd<span class="w">              </span><span class="c1"># Disable at boot and stop immediately</span>
+systemctl<span class="w"> </span>is-enabled<span class="w"> </span>sshd<span class="w">                 </span><span class="c1"># Query boot enablement</span>
+systemctl<span class="w"> </span>is-active<span class="w"> </span>sshd<span class="w">                  </span><span class="c1"># Query current runtime state</span>
+
+scp<span class="w"> </span>file<span class="w"> </span>user@server:/path/<span class="w">               </span><span class="c1"># Copy a file over SSH</span>
+sftp<span class="w"> </span>user@server<span class="w">                          </span><span class="c1"># Open an interactive SSH file-transfer session</span>
+rsync<span class="w"> </span>-a<span class="w"> </span>file<span class="w"> </span>user@server:/path/<span class="w">          </span><span class="c1"># -a: archive mode; preserve key metadata</span>
+</code></pre></div>
+<p><code>enable</code> affects future boots; <code>start</code> affects the current boot. <code>enable --now</code> does both.</p>
+<hr />
+<h2 id="5-configure-local-storage">5. Configure Local Storage</h2>
+<div class="admonition danger">
+<p class="admonition-title">Identify devices before changing storage</p>
+<p>Partitioning, formatting, and PV creation can destroy data. In labs and on the exam, confirm device names with <code>lsblk</code>, <code>blkid</code>, and <code>findmnt</code> before acting.</p>
+</div>
+<h3 id="inspect-disks-and-file-systems">Inspect disks and file systems</h3>
+<div class="highlight"><pre><span></span><code>lsblk<span class="w"> </span>-f<span class="w">                                  </span><span class="c1"># Show block-device filesystems, labels, and UUIDs</span>
+blkid<span class="w">                                     </span><span class="c1"># Probe block-device attributes such as UUID/type</span>
+findmnt<span class="w">                                   </span><span class="c1"># Show the mount tree</span>
+findmnt<span class="w"> </span>--verify<span class="w">                          </span><span class="c1"># Validate /etc/fstab syntax and usability</span>
+df<span class="w"> </span>-hT<span class="w">                                    </span><span class="c1"># -h human sizes; -T filesystem types</span>
+du<span class="w"> </span>-sh<span class="w"> </span>/path<span class="w">                              </span><span class="c1"># -s total only; -h human-readable size</span>
+fdisk<span class="w"> </span>-l<span class="w">                                  </span><span class="c1"># -l: list disk partition tables</span>
+pvs<span class="p">;</span><span class="w"> </span>vgs<span class="p">;</span><span class="w"> </span>lvs<span class="w">                             </span><span class="c1"># Summarize LVM physical, volume, logical volumes</span>
+</code></pre></div>
+<h3 id="gpt-partitions">GPT partitions</h3>
+<p>With <code>parted</code>:</p>
+<div class="highlight"><pre><span></span><code>parted<span class="w"> </span>/dev/vdb<span class="w"> </span>print<span class="w">                     </span><span class="c1"># Inspect the disk before changing it</span>
+parted<span class="w"> </span>/dev/vdb<span class="w"> </span>--script<span class="w"> </span>mklabel<span class="w"> </span>gpt<span class="w">      </span><span class="c1"># Noninteractive: create a GPT table</span>
+parted<span class="w"> </span>/dev/vdb<span class="w"> </span>--script<span class="w"> </span>mkpart<span class="w"> </span>primary<span class="w"> </span>xfs<span class="w"> </span>1MiB<span class="w"> </span>2GiB
+<span class="w">                                          </span><span class="c1"># Create partition 1 from 1 MiB through 2 GiB</span>
+partprobe<span class="w"> </span>/dev/vdb<span class="w">                        </span><span class="c1"># Ask the kernel to reread the partition table</span>
+udevadm<span class="w"> </span>settle<span class="w">                            </span><span class="c1"># Wait until pending udev device events finish</span>
+lsblk<span class="w"> </span>/dev/vdb
+</code></pre></div>
+<p>Interactive <code>fdisk</code> also supports GPT (<code>g</code> creates a GPT table; <code>n</code> adds a partition; <code>d</code> deletes; <code>p</code> prints; <code>w</code> writes). Always inspect first.</p>
+<h3 id="lvm-pvs-vgs-and-lvs">LVM: PVs, VGs, and LVs</h3>
+<div class="highlight"><pre><span></span><code>pvcreate<span class="w"> </span>/dev/vdb1<span class="w">                        </span><span class="c1"># Initialize the partition as an LVM PV</span>
+vgcreate<span class="w"> </span>vgdata<span class="w"> </span>/dev/vdb1<span class="w">                 </span><span class="c1"># Create VG vgdata containing that PV</span>
+lvcreate<span class="w"> </span>-L<span class="w"> </span>2G<span class="w"> </span>-n<span class="w"> </span>lvfiles<span class="w"> </span>vgdata<span class="w">          </span><span class="c1"># -L exact size; -n logical-volume name</span>
+lvcreate<span class="w"> </span>-l<span class="w"> </span><span class="m">100</span>%FREE<span class="w"> </span>-n<span class="w"> </span>lvrest<span class="w"> </span>vgdata<span class="w">     </span><span class="c1"># -l extents; consume all free VG extents</span>
+
+pvs
+vgs
+lvs<span class="w"> </span>-a<span class="w"> </span>-o<span class="w"> </span>+devices<span class="w">                       </span><span class="c1"># Include hidden LVs and append backing devices</span>
+</code></pre></div>
+<p>Add capacity and extend an LV:</p>
+<div class="highlight"><pre><span></span><code>pvcreate<span class="w"> </span>/dev/vdc1
+vgextend<span class="w"> </span>vgdata<span class="w"> </span>/dev/vdc1<span class="w">                 </span><span class="c1"># Add the new PV to the existing VG</span>
+lvextend<span class="w"> </span>-L<span class="w"> </span>+1G<span class="w"> </span>/dev/vgdata/lvfiles<span class="w">       </span><span class="c1"># Grow the LV by 1 GiB; not the filesystem yet</span>
+</code></pre></div>
+<p>Remove in reverse dependency order after unmounting and removing persistent mount entries:</p>
+<div class="highlight"><pre><span></span><code>lvremove<span class="w"> </span>/dev/vgdata/lvfiles<span class="w">              </span><span class="c1"># Remove the logical volume first</span>
+vgremove<span class="w"> </span>vgdata<span class="w">                           </span><span class="c1"># Then remove the empty volume group</span>
+pvremove<span class="w"> </span>/dev/vdb1<span class="w">                        </span><span class="c1"># Finally erase LVM metadata from the PV</span>
+</code></pre></div>
+<h3 id="create-and-mount-file-systems">Create and mount file systems</h3>
+<div class="highlight"><pre><span></span><code>mkfs.xfs<span class="w"> </span>/dev/vgdata/lvfiles<span class="w">              </span><span class="c1"># Create an XFS filesystem (destroys old data)</span>
+mkfs.ext4<span class="w"> </span>/dev/vdb2<span class="w">                      </span><span class="c1"># Create an ext4 filesystem</span>
+mkfs.vfat<span class="w"> </span>/dev/vdb3<span class="w">                      </span><span class="c1"># Create a FAT filesystem</span>
+
+mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/files<span class="w">                       </span><span class="c1"># Create the mount point and missing parents</span>
+mount<span class="w"> </span>/dev/vgdata/lvfiles<span class="w"> </span>/srv/files<span class="w">      </span><span class="c1"># Mount for the current boot</span>
+findmnt<span class="w"> </span>/srv/files<span class="w">                        </span><span class="c1"># Verify the source, target, type, and options</span>
+umount<span class="w"> </span>/srv/files<span class="w">                         </span><span class="c1"># Unmount by mount point</span>
+</code></pre></div>
+<p>Get the UUID and configure <code>/etc/fstab</code>:</p>
+<div class="highlight"><pre><span></span><code>blkid<span class="w"> </span>/dev/vgdata/lvfiles
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>UUID=11111111-2222-3333-4444-555555555555 /srv/files xfs defaults 0 0
+LABEL=archive /archive ext4 defaults 0 2
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>mount<span class="w"> </span>-a<span class="w">                                  </span><span class="c1"># Attempt every eligible /etc/fstab entry</span>
+findmnt<span class="w"> </span>--verify<span class="w">                          </span><span class="c1"># Report fstab parse or source/target problems</span>
+findmnt<span class="w"> </span>/srv/files
+</code></pre></div>
+<p>Never assume an <code>/etc/fstab</code> edit works. Run <code>mount -a</code> and <code>findmnt --verify</code> before rebooting.</p>
+<p>Labels:</p>
+<div class="highlight"><pre><span></span><code>xfs_admin<span class="w"> </span>-L<span class="w"> </span>files<span class="w"> </span>/dev/vgdata/lvfiles<span class="w">    </span><span class="c1"># -L: set the XFS label</span>
+e2label<span class="w"> </span>/dev/vdb2<span class="w"> </span>archive<span class="w">                 </span><span class="c1"># Set the ext2/3/4 label</span>
+fatlabel<span class="w"> </span>/dev/vdb3<span class="w"> </span>USBSTORE<span class="w">               </span><span class="c1"># Set the FAT label</span>
+</code></pre></div>
+<h3 id="add-swap-non-destructively">Add swap non-destructively</h3>
+<div class="highlight"><pre><span></span><code>mkswap<span class="w"> </span>/dev/vgdata/lvswap<span class="w">                 </span><span class="c1"># Write a swap-area signature</span>
+swapon<span class="w"> </span>/dev/vgdata/lvswap<span class="w">                 </span><span class="c1"># Activate swap for the current boot</span>
+swapon<span class="w"> </span>--show<span class="w">                             </span><span class="c1"># List active swap areas</span>
+free<span class="w"> </span>-h<span class="w">                                   </span><span class="c1"># -h: show human-readable memory/swap totals</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>UUID=SWAP-UUID none swap defaults 0 0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>swapoff<span class="w"> </span>/dev/vgdata/lvswap<span class="w">                </span><span class="c1"># Deactivate the swap area</span>
+</code></pre></div>
+<h3 id="extend-a-file-system">Extend a file system</h3>
+<p>XFS grows while mounted and cannot shrink:</p>
+<div class="highlight"><pre><span></span><code>lvextend<span class="w"> </span>-L<span class="w"> </span>+1G<span class="w"> </span>/dev/vgdata/lvfiles<span class="w">       </span><span class="c1"># Add 1 GiB to the logical volume</span>
+xfs_growfs<span class="w"> </span>/srv/files<span class="w">                     </span><span class="c1"># Grow mounted XFS to fill the larger device</span>
+</code></pre></div>
+<p>Ext4 grows by device name and can be grown while mounted:</p>
+<div class="highlight"><pre><span></span><code>lvextend<span class="w"> </span>-L<span class="w"> </span>+1G<span class="w"> </span>/dev/vgdata/lvext4<span class="w">        </span><span class="c1"># Add 1 GiB to the logical volume</span>
+resize2fs<span class="w"> </span>/dev/vgdata/lvext4<span class="w">              </span><span class="c1"># Grow ext4 to fill the larger device</span>
+</code></pre></div>
+<p>For LVM file systems, <code>lvextend -r -L +1G LV_PATH</code> asks LVM to resize the LV and file system together. Still verify with <code>lvs</code>, <code>findmnt</code>, and <code>df -hT</code>.</p>
+<h3 id="nfs-mounts">NFS mounts</h3>
+<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>nfs-utils<span class="w">                     </span><span class="c1"># Install NFS client commands</span>
+showmount<span class="w"> </span>-e<span class="w"> </span>nfs.example.com<span class="w">              </span><span class="c1"># -e: list exports advertised by the server</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/projects
+mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span>nfs.example.com:/exports/projects<span class="w"> </span>/mnt/projects
+<span class="w">                                          </span><span class="c1"># -t nfs: explicitly select the NFS type</span>
+findmnt<span class="w"> </span>/mnt/projects
+</code></pre></div>
+<p>Persistent <code>/etc/fstab</code> entry:</p>
+<div class="highlight"><pre><span></span><code>nfs.example.com:/exports/projects /mnt/projects nfs defaults,_netdev 0 0
+</code></pre></div>
+<h3 id="autofs">autofs</h3>
+<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>autofs
+</code></pre></div>
+<p>Master map <code>/etc/auto.master.d/projects.autofs</code>:</p>
+<div class="highlight"><pre><span></span><code>/projects /etc/auto.projects
+</code></pre></div>
+<p>Indirect map <code>/etc/auto.projects</code>:</p>
+<div class="highlight"><pre><span></span><code>team -rw,sync nfs.example.com:/exports/team
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>autofs<span class="w">             </span><span class="c1"># Enable at boot and start now</span>
+ls<span class="w"> </span>/projects/team<span class="w">                         </span><span class="c1"># Access triggers the on-demand mount</span>
+mount<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>/projects/team
+</code></pre></div>
+<p>For a wildcard map, <code>* -rw nfs.example.com:/exports/&amp;</code> substitutes the requested key for <code>&amp;</code>.</p>
+<h3 id="diagnose-file-permission-problems">Diagnose file-permission problems</h3>
+<div class="highlight"><pre><span></span><code>namei<span class="w"> </span>-l<span class="w"> </span>/srv/app/data/file<span class="w">                  </span><span class="c1"># -l: show owner/mode for every path component</span>
+ls<span class="w"> </span>-ldZ<span class="w"> </span>/srv<span class="w"> </span>/srv/app<span class="w"> </span>/srv/app/data<span class="w"> </span>/srv/app/data/file
+<span class="w">                                            </span><span class="c1"># -d inspect dirs; -Z include SELinux contexts</span>
+id<span class="w"> </span>username<span class="w">                                 </span><span class="c1"># Show the user's UID and all group memberships</span>
+getfacl<span class="w"> </span>/srv/app/data/file<span class="w">                  </span><span class="c1"># Display ACL entries and the effective mask</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>username<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-r<span class="w"> </span>/srv/app/data/file<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>readable
+<span class="w">                                            </span><span class="c1"># Test readability as username; print on success</span>
+ausearch<span class="w"> </span>-m<span class="w"> </span>AVC<span class="w"> </span>-ts<span class="w"> </span>recent<span class="w">                  </span><span class="c1"># AVC denials (-m) from a recent time (-ts)</span>
+</code></pre></div>
+<p>Check every layer: ownership, mode bits, parent-directory execute permission, ACLs, SELinux context, mount options, and whether the file system is read-only.</p>
+<hr />
+<h2 id="6-deploy-configure-and-maintain-systems">6. Deploy, Configure, and Maintain Systems</h2>
+<h3 id="schedule-one-time-and-recurring-tasks">Schedule one-time and recurring tasks</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># at</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>atd<span class="w">                 </span><span class="c1"># Enable and start the one-time job daemon</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'/usr/local/bin/report.sh'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>at<span class="w"> </span><span class="m">17</span>:00<span class="w"> </span><span class="c1"># Queue input as a one-time job for 5 p.m.</span>
+atq<span class="w">                                      </span><span class="c1"># List the current user's queued jobs</span>
+atrm<span class="w"> </span>JOB_NUMBER<span class="w">                          </span><span class="c1"># Remove a queued job by number</span>
+
+<span class="c1"># Per-user cron</span>
+crontab<span class="w"> </span>-e<span class="w">                                </span><span class="c1"># Edit the current user's crontab</span>
+crontab<span class="w"> </span>-l<span class="w">                                </span><span class="c1"># -l: list the current user's entries</span>
+crontab<span class="w"> </span>-u<span class="w"> </span>username<span class="w"> </span>-l<span class="w">                    </span><span class="c1"># -u: select another user (root required)</span>
+</code></pre></div>
+<p>Cron fields:</p>
+<div class="highlight"><pre><span></span><code>minute hour day-of-month month day-of-week command
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>*/15 * * * * /usr/local/bin/check.sh
+30 2 * * 1-5 /usr/local/bin/backup.sh
+</code></pre></div>
+<p>Use absolute command paths in scheduled jobs and redirect output explicitly. Also know <code>/etc/crontab</code>, <code>/etc/cron.d/</code>, and <code>/etc/cron.{hourly,daily,weekly,monthly}/</code>.</p>
+<h3 id="systemd-timer-units">systemd timer units</h3>
+<p><code>/etc/systemd/system/report.service</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Generate report</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/report.sh</span>
+</code></pre></div>
+<p><code>/etc/systemd/system/report.timer</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Run report daily</span>
+
+<span class="k">[Timer]</span>
+<span class="na">OnCalendar</span><span class="o">=</span><span class="s">daily</span>
+<span class="na">Persistent</span><span class="o">=</span><span class="s">true</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">timers.target</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>daemon-reload<span class="w">                    </span><span class="c1"># Re-read unit files after creating/editing them</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>report.timer<span class="w">        </span><span class="c1"># Start timer now and enable it at boot</span>
+systemctl<span class="w"> </span>list-timers<span class="w">                      </span><span class="c1"># Show next and previous timer activations</span>
+systemctl<span class="w"> </span>status<span class="w"> </span>report.timer<span class="w">              </span><span class="c1"># Inspect timer state and next trigger</span>
+journalctl<span class="w"> </span>-u<span class="w"> </span>report.service<span class="w">               </span><span class="c1"># View output from the service the timer runs</span>
+</code></pre></div>
+<p><code>Persistent=true</code> runs a missed calendar event after the machine returns. It does not apply to monotonic timers such as <code>OnBootSec=</code>.</p>
+<h3 id="service-enablement-and-default-boot-target">Service enablement and default boot target</h3>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>UNIT
+systemctl<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>UNIT
+systemctl<span class="w"> </span>get-default
+systemctl<span class="w"> </span>set-default<span class="w"> </span>multi-user.target
+</code></pre></div>
+<h3 id="time-synchronization">Time synchronization</h3>
+<div class="highlight"><pre><span></span><code>timedatectl<span class="w">                               </span><span class="c1"># Show time, timezone, RTC, and NTP status</span>
+timedatectl<span class="w"> </span>set-timezone<span class="w"> </span>America/Los_Angeles<span class="w"> </span><span class="c1"># Persistently set the system timezone</span>
+timedatectl<span class="w"> </span>list-timezones<span class="w">                </span><span class="c1"># List valid timezone names</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>chronyd<span class="w">            </span><span class="c1"># Enable and start the NTP client/server</span>
+chronyc<span class="w"> </span>sources<span class="w"> </span>-v<span class="w">                        </span><span class="c1"># -v: verbose NTP source state and legend</span>
+chronyc<span class="w"> </span>tracking<span class="w">                          </span><span class="c1"># Show synchronization and clock statistics</span>
+</code></pre></div>
+<p>Configure NTP sources in <code>/etc/chrony.conf</code>, then:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>chronyd
+chronyc<span class="w"> </span>sources<span class="w"> </span>-v
+</code></pre></div>
+<h3 id="bootloader-changes">Bootloader changes</h3>
+<p>Inspect kernel arguments:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/proc/cmdline<span class="w">                         </span><span class="c1"># Show arguments used for the running kernel</span>
+grubby<span class="w"> </span>--default-kernel<span class="w">                   </span><span class="c1"># Show the default kernel image path</span>
+grubby<span class="w"> </span>--info<span class="o">=</span>ALL<span class="w">                         </span><span class="c1"># Show saved entries for all installed kernels</span>
+</code></pre></div>
+<p>Add or remove an argument from all installed kernels:</p>
+<div class="highlight"><pre><span></span><code>grubby<span class="w"> </span>--update-kernel<span class="o">=</span>ALL<span class="w"> </span>--args<span class="o">=</span><span class="s2">"console=ttyS0"</span>
+<span class="w">                                          </span><span class="c1"># Add the argument to every kernel entry</span>
+grubby<span class="w"> </span>--update-kernel<span class="o">=</span>ALL<span class="w"> </span>--remove-args<span class="o">=</span><span class="s2">"console=ttyS0"</span>
+<span class="w">                                          </span><span class="c1"># Remove it from every kernel entry</span>
+</code></pre></div>
+<p>Common GRUB paths differ by firmware and RHEL version. Prefer tools such as <code>grubby</code> when the task permits, and verify the resulting kernel entry before rebooting.</p>
+<hr />
+<h2 id="7-manage-basic-networking">7. Manage Basic Networking</h2>
+<h3 id="inspect-networking">Inspect networking</h3>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>-br<span class="w"> </span>address<span class="w">                            </span><span class="c1"># -br: brief address summary</span>
+ip<span class="w"> </span>route<span class="w">                                  </span><span class="c1"># Show the IPv4 routing table</span>
+ip<span class="w"> </span>-6<span class="w"> </span>route<span class="w">                               </span><span class="c1"># -6: show the IPv6 routing table</span>
+ss<span class="w"> </span>-tulpn<span class="w">                                 </span><span class="c1"># -t TCP, -u UDP, -l listening, -p process, -n numeric</span>
+nmcli<span class="w"> </span>device<span class="w"> </span>status<span class="w">                       </span><span class="c1"># Show interfaces and NetworkManager state</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>show<span class="w">                     </span><span class="c1"># List saved NetworkManager profiles</span>
+hostnamectl<span class="w">                               </span><span class="c1"># Show hostname and system identity</span>
+getent<span class="w"> </span>hosts<span class="w"> </span>server.example.com<span class="w">           </span><span class="c1"># Resolve through configured NSS sources</span>
+</code></pre></div>
+<h3 id="configure-ipv4-with-networkmanager">Configure IPv4 with NetworkManager</h3>
+<p>First identify the connection name:</p>
+<div class="highlight"><pre><span></span><code>nmcli<span class="w"> </span>connection<span class="w"> </span>show
+</code></pre></div>
+<p>Configure a static address, gateway, and DNS:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use static addressing, then set the address/prefix, gateway, and DNS list</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s1">'System eth0'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.method<span class="w"> </span>manual<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.addresses<span class="w"> </span><span class="m">192</span>.0.2.10/24<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.gateway<span class="w"> </span><span class="m">192</span>.0.2.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.dns<span class="w"> </span><span class="s1">'192.0.2.53 1.1.1.1'</span><span class="w">           </span><span class="c1"># Set an ordered DNS server list</span>
+
+nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s1">'System eth0'</span><span class="w">         </span><span class="c1"># Activate the changed profile immediately</span>
+</code></pre></div>
+<p>Return to DHCP:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Switch to DHCP and clear values left from the static configuration</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s1">'System eth0'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.method<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.addresses<span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.gateway<span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv4.dns<span class="w"> </span><span class="s1">''</span><span class="w">                              </span><span class="c1"># Clear the saved static DNS list</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s1">'System eth0'</span>
+</code></pre></div>
+<h3 id="configure-ipv6">Configure IPv6</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure a static IPv6 address, default gateway, and DNS server</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s1">'System eth0'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv6.method<span class="w"> </span>manual<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv6.addresses<span class="w"> </span><span class="m">2001</span>:db8:1::10/64<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv6.gateway<span class="w"> </span><span class="m">2001</span>:db8:1::1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ipv6.dns<span class="w"> </span><span class="m">2001</span>:4860:4860::8888<span class="w">           </span><span class="c1"># Set an IPv6 DNS server</span>
+nmcli<span class="w"> </span>connection<span class="w"> </span>up<span class="w"> </span><span class="s1">'System eth0'</span>
+</code></pre></div>
+<p>Verify configuration and boot persistence:</p>
+<div class="highlight"><pre><span></span><code>nmcli<span class="w"> </span>-f<span class="w"> </span>GENERAL.STATE,IP4,IP6<span class="w"> </span>connection<span class="w"> </span>show<span class="w"> </span><span class="s1">'System eth0'</span>
+<span class="w">                                          </span><span class="c1"># -f: display only the selected fields</span>
+ip<span class="w"> </span>-br<span class="w"> </span>address<span class="w">                            </span><span class="c1"># Confirm assigned IPv4/IPv6 addresses</span>
+ip<span class="w"> </span>route
+ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">192</span>.0.2.1<span class="w">                       </span><span class="c1"># -c 3: stop after three echo requests</span>
+getent<span class="w"> </span>hosts<span class="w"> </span>example.com
+nmcli<span class="w"> </span>connection<span class="w"> </span>modify<span class="w"> </span><span class="s1">'System eth0'</span><span class="w"> </span>connection.autoconnect<span class="w"> </span>yes
+<span class="w">                                          </span><span class="c1"># Activate this profile automatically at boot</span>
+</code></pre></div>
+<h3 id="hostname-resolution">Hostname resolution</h3>
+<div class="highlight"><pre><span></span><code>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>server1.example.com<span class="w"> </span><span class="c1"># Set the persistent static hostname</span>
+hostnamectl
+getent<span class="w"> </span>hosts<span class="w"> </span>server1.example.com
+</code></pre></div>
+<p><code>/etc/hosts</code> format:</p>
+<div class="highlight"><pre><span></span><code>192.0.2.10 server1.example.com server1
+</code></pre></div>
+<p>NetworkManager normally manages <code>/etc/resolv.conf</code>; configure DNS through the active connection rather than manually overwriting that file.</p>
+<h3 id="firewalld">firewalld</h3>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>firewalld
+firewall-cmd<span class="w"> </span>--get-active-zones<span class="w">            </span><span class="c1"># Show zones currently bound to interfaces/sources</span>
+firewall-cmd<span class="w"> </span>--get-default-zone<span class="w">            </span><span class="c1"># Show the zone used when none is specified</span>
+firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--list-all<span class="w">      </span><span class="c1"># Show all runtime settings in public</span>
+firewall-cmd<span class="w"> </span>--get-services<span class="w">                </span><span class="c1"># List predefined service definitions</span>
+
+<span class="c1"># Permanent and immediate service rule</span>
+firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-service<span class="o">=</span>http
+<span class="w">                                           </span><span class="c1"># Save HTTP allowance for future reloads/boots</span>
+firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-service<span class="o">=</span>http
+<span class="w">                                           </span><span class="c1"># Add HTTP to the current runtime only</span>
+
+<span class="c1"># Or make permanent changes and reload once</span>
+firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--add-port<span class="o">=</span><span class="m">8080</span>/tcp
+<span class="w">                                           </span><span class="c1"># Persistently allow TCP destination port 8080</span>
+firewall-cmd<span class="w"> </span>--reload<span class="w">                      </span><span class="c1"># Replace runtime rules with permanent rules</span>
+firewall-cmd<span class="w"> </span>--zone<span class="o">=</span>public<span class="w"> </span>--list-all
+</code></pre></div>
+<p>Runtime rules disappear after reload or reboot. Permanent rules do not take effect in the runtime configuration until reload, unless you also add the runtime rule.</p>
+<hr />
+<h2 id="8-manage-users-and-groups">8. Manage Users and Groups</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Users</span>
+<span class="c1"># Creation alternatives: run one, not both</span>
+useradd<span class="w"> </span>student<span class="w">                              </span><span class="c1"># Create an account using system defaults</span>
+useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>student<span class="w">              </span><span class="c1"># -m home directory; -s login shell</span>
+usermod<span class="w"> </span>-c<span class="w"> </span><span class="s1">'Student User'</span><span class="w"> </span>student<span class="w">             </span><span class="c1"># -c: set the GECOS/comment field</span>
+usermod<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>student<span class="w">                  </span><span class="c1"># -s: change the login shell</span>
+usermod<span class="w"> </span>-L<span class="w"> </span>student<span class="w">                            </span><span class="c1"># -L: lock password authentication</span>
+usermod<span class="w"> </span>-U<span class="w"> </span>student<span class="w">                            </span><span class="c1"># -U: unlock the password</span>
+passwd<span class="w"> </span>student<span class="w">                                </span><span class="c1"># Set or change the user's password</span>
+id<span class="w"> </span>student<span class="w">                                    </span><span class="c1"># Show UID, primary GID, and groups</span>
+getent<span class="w"> </span>passwd<span class="w"> </span>student<span class="w">                         </span><span class="c1"># Query the configured account databases</span>
+
+<span class="c1"># Deletion alternatives: run one, not both</span>
+userdel<span class="w"> </span>student<span class="w">                               </span><span class="c1"># Remove account; leave home/data intact</span>
+userdel<span class="w"> </span>-r<span class="w"> </span>student<span class="w">                            </span><span class="c1"># -r: also remove home and mail spool</span>
+
+<span class="c1"># Groups</span>
+groupadd<span class="w"> </span>project<span class="w">                              </span><span class="c1"># Create a group</span>
+groupmod<span class="w"> </span>-n<span class="w"> </span>newproject<span class="w"> </span>project<span class="w">                </span><span class="c1"># -n: rename the group</span>
+groupdel<span class="w"> </span>newproject<span class="w">                           </span><span class="c1"># Delete the group</span>
+usermod<span class="w"> </span>-aG<span class="w"> </span>wheel,project<span class="w"> </span>student<span class="w">             </span><span class="c1"># -a append; -G supplementary groups</span>
+gpasswd<span class="w"> </span>-a<span class="w"> </span>student<span class="w"> </span>project<span class="w">                    </span><span class="c1"># -a: add one user to one group</span>
+gpasswd<span class="w"> </span>-d<span class="w"> </span>student<span class="w"> </span>project<span class="w">                    </span><span class="c1"># -d: delete one user from one group</span>
+getent<span class="w"> </span>group<span class="w"> </span>project<span class="w">                          </span><span class="c1"># Query the configured group databases</span>
+</code></pre></div>
+<p>Do not omit <code>-a</code> when adding supplementary groups with <code>usermod -aG</code>; <code>-G</code> by itself replaces the existing supplementary group list.</p>
+<h3 id="password-aging">Password aging</h3>
+<div class="highlight"><pre><span></span><code>chage<span class="w"> </span>-l<span class="w"> </span>student<span class="w">                              </span><span class="c1"># -l: list current password-aging values</span>
+chage<span class="w"> </span>-M<span class="w"> </span><span class="m">90</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>-W<span class="w"> </span><span class="m">7</span><span class="w"> </span>student<span class="w">                 </span><span class="c1"># Max 90 days, min 1, warn for 7 days</span>
+chage<span class="w"> </span>-E<span class="w"> </span><span class="m">2026</span>-12-31<span class="w"> </span>student<span class="w">                   </span><span class="c1"># -E: expire the account on this date</span>
+passwd<span class="w"> </span>-e<span class="w"> </span>student<span class="w">                             </span><span class="c1"># -e: expire password now; change at login</span>
+</code></pre></div>
+<p>Key files and defaults:</p>
+<ul>
+<li><code>/etc/passwd</code>: account information; password field is normally <code>x</code>.</li>
+<li><code>/etc/shadow</code>: password hashes and aging data.</li>
+<li><code>/etc/group</code>: group membership.</li>
+<li><code>/etc/login.defs</code>: account defaults.</li>
+<li><code>/etc/skel</code>: files copied into a new home directory.</li>
+</ul>
+<h3 id="privileged-access-with-sudo">Privileged access with sudo</h3>
+<p>Always edit sudo policy safely:</p>
+<div class="highlight"><pre><span></span><code>visudo<span class="w">                                        </span><span class="c1"># Safely edit and syntax-check /etc/sudoers</span>
+visudo<span class="w"> </span>-f<span class="w"> </span>/etc/sudoers.d/project-admins<span class="w">       </span><span class="c1"># -f: edit a specified sudoers file</span>
+visudo<span class="w"> </span>-cf<span class="w"> </span>/etc/sudoers.d/project-admins<span class="w">      </span><span class="c1"># -c check only; -f select the file</span>
+</code></pre></div>
+<p>Example <code>/etc/sudoers.d/project-admins</code>:</p>
+<div class="highlight"><pre><span></span><code>%project ALL=(ALL) /usr/bin/systemctl restart httpd, /usr/bin/systemctl status httpd
+</code></pre></div>
+<p>Use exact absolute command paths in sudo rules. Files under <code>/etc/sudoers.d</code> should normally be owned by root and mode <code>0440</code>.</p>
+<hr />
+<h2 id="9-manage-security">9. Manage Security</h2>
+<h3 id="default-permissions-and-special-modes">Default permissions and special modes</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">umask</span><span class="w">                                         </span><span class="c1"># Display the current creation mask</span>
+<span class="nb">umask</span><span class="w"> </span><span class="m">027</span><span class="w">                                     </span><span class="c1"># Remove group write and all other access</span>
+</code></pre></div>
+<p>Default mode calculation starts from <code>0666</code> for regular files and <code>0777</code> for directories, then removes the bits selected by the umask. With <code>umask 027</code>, typical results are files <code>0640</code> and directories <code>0750</code>.</p>
+<p>Special permission bits:</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th style="text-align: right;">Numeric</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setuid</td>
+<td style="text-align: right;"><code>4000</code></td>
+<td>Executable runs with file owner's effective UID</td>
+</tr>
+<tr>
+<td>setgid</td>
+<td style="text-align: right;"><code>2000</code></td>
+<td>Executable uses file group; directory causes new entries to inherit its group</td>
+</tr>
+<tr>
+<td>sticky</td>
+<td style="text-align: right;"><code>1000</code></td>
+<td>In a shared directory, users normally remove only their own entries</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>chgrp<span class="w"> </span>project<span class="w"> </span>/srv/project<span class="w">                    </span><span class="c1"># Make project the directory's group</span>
+chmod<span class="w"> </span><span class="m">2770</span><span class="w"> </span>/srv/project<span class="w">                       </span><span class="c1"># setgid; rwx for owner/group, none others</span>
+chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>/srv/dropbox<span class="w">                       </span><span class="c1"># sticky bit on a world-writable directory</span>
+</code></pre></div>
+<p>For ACLs when standard mode bits are not enough:</p>
+<div class="highlight"><pre><span></span><code>setfacl<span class="w"> </span>-m<span class="w"> </span>u:student:rw<span class="w"> </span>file<span class="w">                  </span><span class="c1"># -m: add/modify a named-user ACL</span>
+setfacl<span class="w"> </span>-m<span class="w"> </span>g:project:rwx<span class="w"> </span>directory<span class="w">            </span><span class="c1"># Add/modify a named-group ACL</span>
+setfacl<span class="w"> </span>-m<span class="w"> </span>d:g:project:rwx<span class="w"> </span>directory<span class="w">          </span><span class="c1"># d: default ACL inherited by new entries</span>
+getfacl<span class="w"> </span>directory<span class="w">                             </span><span class="c1"># Display access and default ACLs</span>
+setfacl<span class="w"> </span>-x<span class="w"> </span>u:student<span class="w"> </span>file<span class="w">                     </span><span class="c1"># -x: remove the named-user ACL entry</span>
+</code></pre></div>
+<h3 id="ssh-key-authentication">SSH key authentication</h3>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w">                         </span><span class="c1"># -t: create an Ed25519 key pair</span>
+ssh-copy-id<span class="w"> </span>student@server<span class="w">                    </span><span class="c1"># Install the public key in authorized_keys</span>
+ssh<span class="w"> </span>student@server
+</code></pre></div>
+<p>Server-side checks:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-ldZ<span class="w"> </span>~/.ssh<span class="w">                                </span><span class="c1"># Inspect directory mode and SELinux label</span>
+ls<span class="w"> </span>-lZ<span class="w"> </span>~/.ssh/authorized_keys<span class="w">                 </span><span class="c1"># Inspect key-file mode and label</span>
+chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh<span class="w">                              </span><span class="c1"># Owner rwx; no group/other access</span>
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys<span class="w">              </span><span class="c1"># Owner read/write only</span>
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>~/.ssh<span class="w">                         </span><span class="c1"># -R recursive; -v report restored labels</span>
+sshd<span class="w"> </span>-t<span class="w">                                       </span><span class="c1"># Test sshd configuration syntax</span>
+systemctl<span class="w"> </span>reload<span class="w"> </span>sshd
+</code></pre></div>
+<h3 id="selinux-modes-and-status">SELinux modes and status</h3>
+<div class="highlight"><pre><span></span><code>getenforce<span class="w">                                    </span><span class="c1"># Print Enforcing, Permissive, or Disabled</span>
+sestatus<span class="w">                                      </span><span class="c1"># Show detailed SELinux status and policy</span>
+setenforce<span class="w"> </span><span class="m">0</span><span class="w">                    </span><span class="c1"># Permissive until reboot</span>
+setenforce<span class="w"> </span><span class="m">1</span><span class="w">                    </span><span class="c1"># Enforcing until reboot</span>
+</code></pre></div>
+<p>Persistent mode is controlled by <code>SELINUX=enforcing</code> or <code>SELINUX=permissive</code> in <code>/etc/selinux/config</code>. Disabled mode is different and usually requires a reboot; do not disable SELinux to solve a labeling problem.</p>
+<h3 id="contexts-and-restoring-labels">Contexts and restoring labels</h3>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lZ<span class="w"> </span>/var/www/html<span class="w">                          </span><span class="c1"># -Z: include SELinux contexts</span>
+ps<span class="w"> </span>-eZ<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>httpd<span class="w">                           </span><span class="c1"># -e all processes; -Z include contexts</span>
+id<span class="w"> </span>-Z<span class="w">                                         </span><span class="c1"># Show the current process/user context</span>
+matchpathcon<span class="w"> </span>/var/www/html/index.html<span class="w">         </span><span class="c1"># Show the policy's expected file context</span>
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/var/www/html<span class="w">                  </span><span class="c1"># Recursively restore expected labels verbosely</span>
+</code></pre></div>
+<p>Temporary label change:</p>
+<div class="highlight"><pre><span></span><code>chcon<span class="w"> </span>-t<span class="w"> </span>httpd_sys_content_t<span class="w"> </span>/srv/site/index.html
+<span class="w">                                               </span><span class="c1"># -t: temporarily change the SELinux type</span>
+</code></pre></div>
+<p>Persistent custom file-context rule:</p>
+<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>policycoreutils-python-utils
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>httpd_sys_content_t<span class="w"> </span><span class="s1">'/srv/site(/.*)?'</span>
+<span class="w">                                               </span><span class="c1"># -a add rule; -t assign type to tree regex</span>
+restorecon<span class="w"> </span>-Rv<span class="w"> </span>/srv/site<span class="w">                       </span><span class="c1"># Apply the policy rule recursively</span>
+semanage<span class="w"> </span>fcontext<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>/srv/site<span class="w">          </span><span class="c1"># -l: list saved file-context rules</span>
+</code></pre></div>
+<p><code>chcon</code> can be overwritten by <code>restorecon</code> or a relabel. Use <code>semanage fcontext</code> plus <code>restorecon</code> for persistent policy-based labeling.</p>
+<h3 id="selinux-port-labels">SELinux port labels</h3>
+<div class="highlight"><pre><span></span><code>semanage<span class="w"> </span>port<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>http_port_t<span class="w">             </span><span class="c1"># -l: list known port-label rules</span>
+semanage<span class="w"> </span>port<span class="w"> </span>-a<span class="w"> </span>-t<span class="w"> </span>http_port_t<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span><span class="m">8080</span><span class="w">     </span><span class="c1"># -a add; -t type; -p protocol</span>
+semanage<span class="w"> </span>port<span class="w"> </span>-m<span class="w"> </span>-t<span class="w"> </span>http_port_t<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span><span class="m">8080</span><span class="w">     </span><span class="c1"># -m: modify an existing port rule</span>
+semanage<span class="w"> </span>port<span class="w"> </span>-d<span class="w"> </span>-t<span class="w"> </span>http_port_t<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span><span class="m">8080</span><span class="w">     </span><span class="c1"># -d: delete the matching port rule</span>
+</code></pre></div>
+<p>Use <code>-a</code> to add a new port and <code>-m</code> when the port already exists under another type.</p>
+<h3 id="selinux-booleans-and-troubleshooting">SELinux Booleans and troubleshooting</h3>
+<div class="highlight"><pre><span></span><code>getsebool<span class="w"> </span>-a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>httpd<span class="w">                       </span><span class="c1"># -a: list all SELinux Booleans</span>
+getsebool<span class="w"> </span>httpd_can_network_connect<span class="w">             </span><span class="c1"># Query one Boolean's state</span>
+setsebool<span class="w"> </span>-P<span class="w"> </span>httpd_can_network_connect<span class="w"> </span>on<span class="w">       </span><span class="c1"># -P: persist the change in policy</span>
+
+ausearch<span class="w"> </span>-m<span class="w"> </span>AVC<span class="w"> </span>-ts<span class="w"> </span>recent<span class="w">                      </span><span class="c1"># AVC records since a recent time</span>
+journalctl<span class="w"> </span>-t<span class="w"> </span>setroubleshoot<span class="w">                    </span><span class="c1"># -t: filter by syslog identifier</span>
+sealert<span class="w"> </span>-a<span class="w"> </span>/var/log/audit/audit.log<span class="w">             </span><span class="c1"># -a: analyze the entire audit log</span>
+</code></pre></div>
+<p>Troubleshooting order:</p>
+<ol>
+<li>Confirm the Unix owner, group, permissions, and parent-directory traversal.</li>
+<li>Check the process and file labels with <code>ps -eZ</code> and <code>ls -Z</code>.</li>
+<li>Look for AVC denials with <code>ausearch</code>.</li>
+<li>Restore expected labels or enable an appropriate existing Boolean.</li>
+<li>Do not generate a custom policy until you understand why the access was denied.</li>
+</ol>
+<hr />
+<h2 id="concepts-to-memorize">Concepts to Memorize</h2>
+<h3 id="filesystem-hierarchy">Filesystem hierarchy</h3>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/etc</code></td>
+<td>System configuration</td>
+</tr>
+<tr>
+<td><code>/var</code></td>
+<td>Variable data such as logs, queues, and service state</td>
+</tr>
+<tr>
+<td><code>/home</code></td>
+<td>Regular user home directories</td>
+</tr>
+<tr>
+<td><code>/root</code></td>
+<td>Root user's home directory</td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>Temporary files; often cleaned automatically</td>
+</tr>
+<tr>
+<td><code>/run</code></td>
+<td>Runtime state since boot</td>
+</tr>
+<tr>
+<td><code>/usr</code></td>
+<td>Installed programs, libraries, and shared data</td>
+</tr>
+<tr>
+<td><code>/boot</code></td>
+<td>Kernel, initramfs, and bootloader data</td>
+</tr>
+<tr>
+<td><code>/dev</code></td>
+<td>Device nodes</td>
+</tr>
+<tr>
+<td><code>/proc</code></td>
+<td>Process and kernel information virtual filesystem</td>
+</tr>
+<tr>
+<td><code>/sys</code></td>
+<td>Device and kernel object virtual filesystem</td>
+</tr>
+</tbody>
+</table>
+<h3 id="systemd-unit-states">Systemd unit states</h3>
+<ul>
+<li><strong>active/inactive:</strong> current runtime state.</li>
+<li><strong>enabled/disabled:</strong> whether the unit starts automatically through install links.</li>
+<li><strong>masked:</strong> cannot be started until unmasked.</li>
+<li>After creating or changing a unit file, run <code>systemctl daemon-reload</code>.</li>
+</ul>
+<h3 id="configuration-persistence">Configuration persistence</h3>
+<p>Be able to distinguish a temporary change from a persistent one:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Temporary</th>
+<th>Persistent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SELinux mode</td>
+<td><code>setenforce</code></td>
+<td><code>/etc/selinux/config</code></td>
+</tr>
+<tr>
+<td>Firewall rule</td>
+<td>Runtime <code>firewall-cmd</code></td>
+<td><code>firewall-cmd --permanent</code> plus reload</td>
+</tr>
+<tr>
+<td>Mount</td>
+<td><code>mount</code></td>
+<td><code>/etc/fstab</code> or autofs map</td>
+</tr>
+<tr>
+<td>Swap</td>
+<td><code>swapon</code></td>
+<td><code>/etc/fstab</code></td>
+</tr>
+<tr>
+<td>Service</td>
+<td><code>systemctl start</code></td>
+<td><code>systemctl enable</code></td>
+</tr>
+<tr>
+<td>Hostname</td>
+<td><code>hostname</code></td>
+<td><code>hostnamectl set-hostname</code></td>
+</tr>
+<tr>
+<td>Network</td>
+<td><code>ip</code> command</td>
+<td>NetworkManager connection with <code>nmcli</code></td>
+</tr>
+<tr>
+<td>Kernel argument</td>
+<td>Edit one GRUB boot</td>
+<td>Update saved kernel configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="high-risk-exam-mistakes">High-risk exam mistakes</h3>
+<ul>
+<li>Formatting or partitioning the wrong disk.</li>
+<li>Editing <code>/etc/fstab</code> without running <code>mount -a</code> and <code>findmnt --verify</code>.</li>
+<li>Creating only a runtime firewall rule when persistence is required.</li>
+<li>Starting a service but forgetting to enable it.</li>
+<li>Forgetting <code>-a</code> in <code>usermod -aG</code>.</li>
+<li>Using <code>chmod 777</code> or disabling SELinux instead of diagnosing access.</li>
+<li>Using <code>chcon</code> when a persistent <code>semanage fcontext</code> rule is needed.</li>
+<li>Forgetting to reload a service, firewalld, NetworkManager connection, or systemd after configuration changes.</li>
+<li>Rebooting before checking syntax and persistent configuration.</li>
+</ul>
+<hr />
+<h2 id="final-practice-checklist">Final Practice Checklist</h2>
+<p>Use the complete, interactive <a href="../rhcsa-checklist/">RHCSA Skills Checklist</a> to track every current RHEL 10 exam objective and combined practice drill.</p>
+<p>Complete these capstone tasks from memory on disposable RHEL virtual machines:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure static IPv4, IPv6, hostname, DNS, and autoconnect with <code>nmcli</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a user, supplementary group membership, password-aging policy, and restricted sudo rule.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create GPT partitions, an LVM stack, XFS and ext4 file systems, and swap.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mount local file systems persistently by UUID or label and validate <code>/etc/fstab</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Extend XFS and ext4 logical volumes without destroying data.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure an NFS mount in <code>/etc/fstab</code> and an autofs indirect map.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Schedule jobs with <code>at</code>, cron, and a systemd timer.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure, enable, start, and verify a service.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add persistent firewalld service and port rules and verify the active zone.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure SSH key authentication and correct its permissions and SELinux labels.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Diagnose and repair an SELinux context, port, and Boolean issue.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enable persistent journaling and query current, previous-boot, service, and priority logs.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Identify and terminate processes, adjust nice values, and select a tuned profile.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Configure DNF and Flatpak repositories and install/remove software.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write scripts using tests, conditionals, loops, arguments, and command substitution.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Recover root access by interrupting boot, then confirm SELinux relabeling.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Reboot and confirm that every required configuration survives.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
