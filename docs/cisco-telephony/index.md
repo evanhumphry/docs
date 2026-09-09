@@ -29,6 +29,23 @@ After the four core topics, build operational depth in this order:
 
 Then cover [SRST](srst.md), [Emergency Calling](emergency-calling.md), [DSP Capacity](dsp-capacity.md), [Fax and Special Analog Devices](fax-special-devices.md), [High Availability](high-availability.md), [Webex Calling and Local Gateway](webex-local-gateway.md), and [Monitoring and Automation](monitoring-automation.md).
 
+## CUCM Configuration Tutorials
+
+Use the step-by-step [CUCM Configuration Tutorials](cucm-tutorials/index.md) to build and verify:
+
+- phones, directory numbers, and end-user associations;
+- partitions and Calling Search Spaces;
+- device pools, regions, locations, CUCM groups, SRST references, and MRGL inheritance;
+- SIP trunks and security profiles;
+- route groups, route lists, and route patterns;
+- H.323 and MGCP gateways;
+- calling and called-number transformations;
+- line groups, hunt lists, and hunt pilots;
+- Media Resource Groups and Lists;
+- post-change verification, traces, negative testing, and rollback.
+
+Each tutorial includes prerequisites, menu paths, configuration steps, verification, common mistakes, and rollback.
+
 ## The Complete Call Path
 
 ```text
@@ -72,6 +89,7 @@ This is a logical model, not a promise that every deployment uses every object. 
 | Is this port FXS or FXO? | [Analog Voice Ports](analog-ports.md) |
 | Why did IOS select this dial peer? | [Dial Peers](dial-peers.md) |
 | Why did CUCM choose this gateway? | [CUCM Call Routing](cucm-routing.md) |
+| How do I configure common CUCM objects? | [CUCM Configuration Tutorials](cucm-tutorials/index.md) |
 | How do SIP, H.323, and MGCP differ? | [Protocols and Media](protocols-media.md) |
 | How do I operate and secure a SIP/CUBE edge? | [SIP and CUBE Operations](sip-cube.md) |
 | How does Webex Calling connect through a Local Gateway? | [Webex Calling and Local Gateway](webex-local-gateway.md) |
