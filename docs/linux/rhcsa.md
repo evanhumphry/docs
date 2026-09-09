@@ -1146,7 +1146,9 @@ Be able to distinguish a temporary change from a persistent one:
 
 ## Final Practice Checklist
 
-Complete these from memory on disposable RHEL virtual machines:
+Use the complete, interactive [RHCSA Skills Checklist](rhcsa-checklist.md) to track every current RHEL 10 exam objective and combined practice drill.
+
+Complete these capstone tasks from memory on disposable RHEL virtual machines:
 
 - [ ] Configure static IPv4, IPv6, hostname, DNS, and autoconnect with `nmcli`.
 - [ ] Create a user, supplementary group membership, password-aging policy, and restricted sudo rule.

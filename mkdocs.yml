@@ -14,6 +14,12 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - javascripts/extra.js
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
 nav:
   - Home: index.md
   - CCNA:
@@ -30,5 +36,6 @@ nav:
     - Commands Reference: ccna/commands.md
   - Linux:
     - RHCSA Study Guide: linux/rhcsa.md
+    - RHCSA Skills Checklist: linux/rhcsa-checklist.md
     - Commands: linux/commands.md
     - Web Server: linux/webserver.md
