@@ -16,6 +16,19 @@ Learn these four topics first:
 
 Once those concepts are familiar, use the protocol, call-flow, troubleshooting, and migration pages as operational references.
 
+## Advanced Operations Path
+
+After the four core topics, build operational depth in this order:
+
+1. [SIP and CUBE Operations](sip-cube.md): SIP messages, SDP, peer health, normalization, TLS, SRTP, and toll-fraud controls.
+2. [Voice QoS and Call Quality](qos-quality.md): classification, marking, LLQ, shaping, jitter, loss, and evidence collection.
+3. [CUCM Diagnostics and Tracing](cucm-diagnostics.md): Dialed Number Analyzer, RTMT, SDL/SDI traces, CDR, and CMR.
+4. [Dial-Plan Design](dial-plan-design.md): E.164 normalization, CSS and partitions, transformations, overlap, and Local Route Groups.
+5. [Packet-Capture Walkthroughs](packet-captures.md): SIP, SDP, RTP, H.323, MGCP, DTMF, and one-way-audio analysis.
+6. [Troubleshooting Labs](troubleshooting-labs.md): Twelve guided scenarios with concealed reasoning sections.
+
+Then cover [SRST](srst.md), [Emergency Calling](emergency-calling.md), [DSP Capacity](dsp-capacity.md), [Fax and Special Analog Devices](fax-special-devices.md), [High Availability](high-availability.md), [Webex Calling and Local Gateway](webex-local-gateway.md), and [Monitoring and Automation](monitoring-automation.md).
+
 ## The Complete Call Path
 
 ```text
@@ -60,8 +73,21 @@ This is a logical model, not a promise that every deployment uses every object. 
 | Why did IOS select this dial peer? | [Dial Peers](dial-peers.md) |
 | Why did CUCM choose this gateway? | [CUCM Call Routing](cucm-routing.md) |
 | How do SIP, H.323, and MGCP differ? | [Protocols and Media](protocols-media.md) |
+| How do I operate and secure a SIP/CUBE edge? | [SIP and CUBE Operations](sip-cube.md) |
+| How does Webex Calling connect through a Local Gateway? | [Webex Calling and Local Gateway](webex-local-gateway.md) |
+| How should the enterprise dial plan normalize numbers? | [Dial-Plan Design](dial-plan-design.md) |
 | How does an inbound or outbound call move end to end? | [Call Flows and Walkthroughs](call-flows.md) |
+| How do I collect CUCM evidence? | [CUCM Diagnostics and Tracing](cucm-diagnostics.md) |
+| How do I analyze SIP, SDP, and RTP packets? | [Packet-Capture Walkthroughs](packet-captures.md) |
+| Why is voice quality poor? | [Voice QoS and Call Quality](qos-quality.md) |
+| How do I size or troubleshoot DSP resources? | [DSP and Media Resources](dsp-capacity.md) |
+| How should fax, paging, and special analog devices be handled? | [Fax and Special Analog Devices](fax-special-devices.md) |
+| How does a site retain calling during an outage? | [SRST](srst.md) and [High Availability](high-availability.md) |
+| How should emergency calling be designed and tested? | [Emergency Calling](emergency-calling.md) |
 | Which show or debug command should I use? | [Troubleshooting and Commands](troubleshooting.md) |
+| Where can I practice real failure scenarios? | [Troubleshooting Labs](troubleshooting-labs.md) |
+| Which checklist should I use for a change? | [Operational Checklists](operational-checklists.md) |
+| How should voice systems be monitored or inventoried? | [Monitoring and Automation](monitoring-automation.md) |
 | How should I migrate an old ISR, analog gateway, or protocol? | [Migration Guides](migrations.md) |
 
 ## Core Troubleshooting Model

@@ -36,15 +36,34 @@ nav:
     - Commands Reference: ccna/commands.md
   - Cisco Telephony:
     - Overview: cisco-telephony/index.md
-    - Telephony Fundamentals: cisco-telephony/fundamentals.md
-    - Analog Voice Ports: cisco-telephony/analog-ports.md
-    - Dial Peers & Digit Manipulation: cisco-telephony/dial-peers.md
-    - Protocols & Media: cisco-telephony/protocols-media.md
-    - CUCM Call Routing: cisco-telephony/cucm-routing.md
-    - Call Flows & Walkthroughs: cisco-telephony/call-flows.md
-    - Troubleshooting & Commands: cisco-telephony/troubleshooting.md
-    - Migration Guides: cisco-telephony/migrations.md
-    - Vocabulary Reference: cisco-telephony/glossary.md
+    - Foundations:
+      - Telephony Fundamentals: cisco-telephony/fundamentals.md
+      - Analog Voice Ports: cisco-telephony/analog-ports.md
+      - Vocabulary Reference: cisco-telephony/glossary.md
+    - Routing & Signaling:
+      - Dial Peers & Digit Manipulation: cisco-telephony/dial-peers.md
+      - Dial-Plan Design: cisco-telephony/dial-plan-design.md
+      - Protocols & Media: cisco-telephony/protocols-media.md
+      - SIP & CUBE Operations: cisco-telephony/sip-cube.md
+      - Webex Calling & Local Gateway: cisco-telephony/webex-local-gateway.md
+      - CUCM Call Routing: cisco-telephony/cucm-routing.md
+    - Media & Quality:
+      - Voice QoS & Call Quality: cisco-telephony/qos-quality.md
+      - Packet-Capture Walkthroughs: cisco-telephony/packet-captures.md
+      - DSP & Media Resources: cisco-telephony/dsp-capacity.md
+      - Fax & Special Analog Devices: cisco-telephony/fax-special-devices.md
+    - Operations:
+      - Call Flows & Walkthroughs: cisco-telephony/call-flows.md
+      - CUCM Diagnostics & Tracing: cisco-telephony/cucm-diagnostics.md
+      - Troubleshooting & Commands: cisco-telephony/troubleshooting.md
+      - Troubleshooting Labs: cisco-telephony/troubleshooting-labs.md
+      - Operational Checklists: cisco-telephony/operational-checklists.md
+      - Monitoring & Automation: cisco-telephony/monitoring-automation.md
+    - Resilience & Change:
+      - SRST & Site Survivability: cisco-telephony/srst.md
+      - Emergency Calling: cisco-telephony/emergency-calling.md
+      - High Availability & Failover: cisco-telephony/high-availability.md
+      - Migration Guides: cisco-telephony/migrations.md
   - Linux:
     - RHCSA Study Guide: linux/rhcsa.md
     - RHCSA Skills Checklist: linux/rhcsa-checklist.md
