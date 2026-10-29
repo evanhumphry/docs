@@ -76,6 +76,17 @@ nav:
       - Emergency Calling: cisco-telephony/emergency-calling.md
       - High Availability & Failover: cisco-telephony/high-availability.md
       - Migration Guides: cisco-telephony/migrations.md
+  - Citrix:
+    - Overview: citrix/index.md
+    - Product Categories & Delivery Models: citrix/delivery-models.md
+    - Architecture & Core Components: citrix/architecture.md
+    - User Connection Flow: citrix/connection-flow.md
+    - Catalogs, Delivery Groups & Applications: citrix/catalogs-delivery-groups.md
+    - Machine Creation Services (MCS): citrix/mcs.md
+    - Citrix Provisioning (PVS): citrix/pvs.md
+    - Policies, Profiles & Application Delivery: citrix/policies-profiles.md
+    - Operations & Troubleshooting: citrix/operations-troubleshooting.md
+    - Glossary & Study Checklist: citrix/glossary.md
   - Linux:
     - RHCSA Study Guide: linux/rhcsa.md
     - RHCSA Skills Checklist: linux/rhcsa-checklist.md
