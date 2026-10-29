@@ -2,16 +2,21 @@
 
 Citrix terms often describe different layers. Do not compare two terms until you know whether they describe a product, a workload, an assignment, or a provisioning method.
 
-## Product and deployment categories
+## Control-plane deployment models
 
-| Category | Definition | Purpose |
+| Model | Definition | Purpose |
 |---|---|---|
-| **Citrix Virtual Apps and Desktops (CVAD)** | The self-managed, on-premises product. A deployment is organized as a **site**. | Deliver applications and desktops while your organization operates the controllers, databases, StoreFront, and related infrastructure. |
+| **Citrix Virtual Apps and Desktops (CVAD)** | Customer-managed control-plane deployment organized as a **site**. Its VDAs can run in a customer data center or supported public cloud. | Deliver applications and desktops while your organization operates the controllers, databases, StoreFront, and related infrastructure. |
 | **Citrix DaaS** | Citrix-hosted management and brokering services with customer-managed resource locations. | Reduce control-plane infrastructure while retaining control of workloads and data locations. |
-| **Citrix Workspace app** | Endpoint client for Windows, macOS, Linux, mobile devices, thin clients, and other supported platforms. | Enumerate and launch assigned resources and provide the HDX user experience. |
-| **StoreFront / Citrix Workspace** | Resource-enumeration and user-store services. | Authenticate users and show the apps and desktops they are entitled to launch. |
-| **Citrix Gateway / NetScaler Gateway** | Secure access gateway, commonly placed at the network edge. | Provide TLS-secured remote access without exposing VDAs directly to the internet. |
-| **Citrix Provisioning (PVS)** | Network-streaming image-management product. | Boot many target devices from a centrally managed shared vDisk image. |
+
+## Major supporting-component categories
+
+| Category | Component | Purpose |
+|---|---|---|
+| **Endpoint client** | **Citrix Workspace app** | Enumerate and launch assigned resources and provide the HDX user experience on supported endpoints. |
+| **Resource store** | **StoreFront / Citrix Workspace** | Authenticate users and show the apps and desktops they are entitled to launch. |
+| **Secure access** | **Citrix Gateway / NetScaler Gateway** | Provide TLS-secured remote access without exposing VDAs directly to the internet. |
+| **Image provisioning** | **Citrix Provisioning (PVS)** | Boot many target devices from a centrally managed shared vDisk image. |
 
 ## Resource categories: apps and desktops
 
@@ -36,12 +41,19 @@ The same multi-session host can commonly publish both applications and a desktop
 
 **Multi-session versus single-session describes session density, not provisioning.** Either category may be created and maintained with supported image or lifecycle tools.
 
-## Desktop assignment categories
+## Desktop allocation categories
 
 | Assignment | Definition | Best fit |
 |---|---|---|
-| **Random / pooled** | An eligible user receives any available machine from a pool. | Standardized, nonpersistent desktops where users do not require the same VM. |
+| **Random / pooled** | An eligible user receives any available machine from a pool. | Standardized desktops where users do not require the same VM. |
 | **Static / assigned** | A particular machine is assigned to a user, automatically or manually. | Users who need the same VM identity on future launches. |
+
+Allocation and persistence are separate design dimensions. A statically assigned desktop is not automatically persistent, and allocation alone does not determine whether machine changes survive.
+
+## Machine-persistence categories
+
+| Persistence | Definition | Best fit |
+|---|---|---|
 | **Nonpersistent** | Machine changes are discarded or reset according to the image-management design. | Consistency, easier recovery, and large standardized pools. |
 | **Persistent** | Machine-level changes remain between restarts. | Specialized use cases requiring machine customization. |
 

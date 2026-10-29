@@ -84,4 +84,4 @@ When a resource does not appear or launch, check in this order:
 
 - [Create machine catalogs](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/machine-catalogs-create.html)
 - [Create delivery groups](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/delivery-groups-create.html)
-- [Create and manage applications](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/install-configure/delivery-groups-manage-applications.html)
+- [Create and manage applications](https://docs.citrix.com/us/en/citrix-virtual-apps-desktops/current-release/manage-deployment/applications-manage.html)

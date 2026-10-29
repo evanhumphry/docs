@@ -21,21 +21,22 @@ This section is a beginner-first map of the platform. It explains what each cate
 8. [Operations and troubleshooting](operations-troubleshooting.md)
 9. [Glossary and study checklist](glossary.md)
 
-## The platform in one picture
+## Three common access paths
 
 ```text
-User endpoint
-  └─ Citrix Workspace app or browser
-       └─ StoreFront / Citrix Workspace
-            └─ Citrix Gateway or NetScaler Gateway (external access)
-                 └─ Delivery Controller / Citrix DaaS broker
-                      └─ VDA on a session host or desktop VM
-                           ├─ applications and desktop
-                           ├─ user profile and policies
-                           └─ machine image supplied by MCS, PVS, or other tools
+Internal on-premises:
+Workspace app or browser → StoreFront → Delivery Controller → VDA
+
+External on-premises:
+Workspace app or browser → NetScaler Gateway → StoreFront and Controller
+                                           └→ secured HDX connection → VDA
+
+Citrix DaaS:
+Workspace app or browser → Citrix Workspace → Citrix DaaS broker
+                                             └→ HDX connection → VDA
 ```
 
-The user normally sees an app or desktop. The administrator sees layers: identity, access, brokering, machine provisioning, workload execution, policy, monitoring, and profile management.
+The exact DaaS data path depends on the configured Gateway service, NetScaler Gateway, rendezvous, and direct workload connection options. In every design, the user normally sees an app or desktop while the administrator manages layers: identity, access, brokering, machine provisioning, workload execution, policy, monitoring, and profiles.
 
 ## On-premises CVAD and Citrix DaaS
 

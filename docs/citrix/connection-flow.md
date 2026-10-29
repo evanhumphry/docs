@@ -15,16 +15,26 @@ Understanding the launch sequence makes troubleshooting much easier. The exact d
 9. **Session initializes.** The VDA applies computer and user policy, builds the user environment and profile, and starts the desktop or published application.
 10. **Monitoring data is collected.** Controllers and monitoring services record session state and performance data for Director.
 
-## External launch
+## External on-premises launch
 
-For a remote user, Gateway is normally inserted into the access path:
+For a remote user, NetScaler Gateway is normally the public entry point before StoreFront. StoreFront and the Delivery Controller handle enumeration and brokering; Gateway then proxies the authorized HDX connection to the VDA.
 
 ```text
-Workspace app → public DNS → Gateway → StoreFront/Workspace and broker
-                                      └→ authorized HDX path → VDA
+Workspace app or browser → public DNS → NetScaler Gateway
+                                            ├→ StoreFront → Delivery Controller
+                                            └→ authorized HDX path → VDA
 ```
 
 Gateway should be the controlled edge; VDAs should not simply be exposed to the public internet.
+
+## Citrix DaaS launch
+
+In DaaS, the user normally enters through Citrix Workspace. Citrix-hosted services authenticate, enumerate, and broker the resource. The HDX data path then uses the access method configured for that resource location, such as the Citrix Gateway service, customer-managed NetScaler Gateway, rendezvous, or a supported direct workload connection.
+
+```text
+Workspace app or browser → Citrix Workspace → Citrix DaaS broker
+                                             └→ configured HDX access path → VDA
+```
 
 ## Registration versus launch
 

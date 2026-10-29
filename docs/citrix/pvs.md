@@ -21,32 +21,37 @@ PVS does **not** replace the VDA, Delivery Controller, delivery group, user prof
 
 ```text
 Farm
-  └─ Site
-      ├─ Provisioning Servers
-      ├─ vDisk Stores
-      ├─ Device Collections
-      │    └─ Target Devices
-      └─ Views (optional logical groupings)
+  ├─ Stores
+  ├─ Farm Views (optional)
+  └─ Sites
+      └─ Site
+          ├─ Provisioning Servers
+          ├─ Device Collections
+          │    └─ Target Devices
+          ├─ vDisk Pool
+          └─ Site Views (optional)
 ```
 
 | Component | Definition | Purpose |
 |---|---|---|
 | **Farm** | Highest PVS administrative boundary sharing a PVS database. | Hold the overall PVS configuration. Do not confuse it with a legacy “XenApp farm.” |
-| **Site** | Grouping within a farm containing PVS servers, collections, and related settings. | Organize PVS resources, often by location or administrative boundary. |
+| **Site** | Grouping within a farm containing PVS servers, device collections, a vDisk pool, and related settings. | Organize PVS resources, often by location or administrative boundary. |
 | **PVS database** | SQL database containing PVS configuration and object metadata. | Store farm, site, server, store, vDisk, and target definitions. The vDisk payload itself is stored separately. |
 | **Provisioning Server** | Server running the PVS streaming service and related services. | Authenticate target requests and stream vDisk blocks. Multiple servers provide capacity and resilience. |
-| **Store** | Logical PVS object pointing to a physical location containing vDisk files. | Tell PVS servers where vDisks are stored. |
-| **vDisk** | Virtual hard-disk image containing an OS, VDA, applications, and configuration. | Act as the centrally managed boot disk for one or many targets. |
+| **Store** | Farm-level logical PVS object pointing to a physical location containing vDisk files. | Tell PVS servers where vDisks are stored. A store can be available to selected sites and servers. |
+| **vDisk pool** | Site-level collection of vDisks available to that site. | Make store-backed vDisks available for assignment to target devices in the site. |
+| **vDisk** | Virtual hard-disk image containing an OS, applications, and configuration. In a CVAD/DaaS workload it also contains the VDA. | Act as the centrally managed boot disk for one or many targets. |
 | **Master target device** | Machine used to build or capture the source image. | Create and maintain the vDisk image. |
 | **Target device** | Physical or virtual computer configured to boot from PVS. | Stream and run the assigned vDisk. |
 | **Device collection** | Administrative grouping of target-device records. | Apply or manage settings and operations for a related set of targets. |
+| **View** | Optional logical grouping of target devices independent of device collections. | Organize and operate on targets across a farm or within a site. |
 | **PVS Console** | Administrative interface for PVS. | Configure the farm, vDisks, stores, servers, devices, and versions. |
 
 ## Image modes
 
 ### Private image mode
 
-One target has read/write access to the vDisk. Use this for image maintenance or controlled update workflows. It is not the normal shared production mode.
+One target has direct read/write access to the base vDisk. This is useful for specific single-device image preparation or legacy maintenance workflows, but it is not the normal shared production mode and is not required for the routine versioned update workflow.
 
 ### Standard image mode
 
@@ -57,7 +62,7 @@ Multiple targets share the vDisk as read-only. Each target’s writes are redire
 
 ## vDisk version lifecycle
 
-A common lifecycle is:
+A common versioned lifecycle keeps production targets on their read-only production version while a designated maintenance target boots a new maintenance version:
 
 1. **Maintenance:** create a new vDisk version and boot a maintenance target.
 2. **Update:** install patches, applications, agents, or configuration changes.
